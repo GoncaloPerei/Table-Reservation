@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@900&family=Raleway:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+}
+
+:root{
+    --first-color: #000000;
+    --second-color: #FBF751;
+    --third-color: #FFFFFF;
+    --forth-color: #75B09C;
+    --fifth-color: #998650;
+}
+
+html {
+    font: normal 112.5%/1.65 serif;
+    -moz-font-feature-settings: "liga=1, dlig=1";
+    -ms-font-feature-settings: "liga", "dlig";
+    -webkit-font-feature-settings: "liga", "dlig";
+    -o-font-feature-settings: "liga", "dlig";
+    font-feature-settings: "liga", "dlig";
+}
+
+.giga{
+    font-size: 6.5rem; /* 118 / 18 = 6.5 */
+}
+
+.mega{
+    font-size: 4.8rem; /* 88 / 18 = 4.8 */
+}
+
+.alpha{
+    font-size: 3.7rem; /* 68 / 18 = 3.7 */
+}
+
+.beta{
+    font-size: 2.6rem; /* 48 / 18 = 2.6 */
+}
+
+.gamma{
+    font-size: 2.1rem; /* 38 / 18 = 2.1 */
+}
+
+.delta{
+    font-size: 1.6rem; /* 30 / 18 = 1.6 */
+}
+
+.epsilon{
+    font-size: 1.3rem; /* 24 / 18 = 1.3 */
+}
+
+.zeta{
+    font-size: 1.1rem; /* 20 / 18 = 1.1 */
+}
+
+.logo-icon{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.55rem;
+    user-select: none;
+}
