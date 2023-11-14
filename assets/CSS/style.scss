@@ -94,3 +94,111 @@ a{
     letter-spacing: -12px;
     user-select: none;
 }
+
+/* ============================= */
+
+/* ========== SECÇÃO 2 ========= */
+
+/* ============================= */
+
+
+.main-wrapper{
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.sec-2-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0px 80px;
+    text-transform: uppercase;
+}
+
+.sec-2-info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    line-height: 1.2;
+    h1{
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 30px;
+            width: 10.3rem;
+            height: .27rem;
+            background-color: var(--forth-color);
+        }
+    }
+    span{
+        color: var(--forth-color);
+    }
+}
+
+.sec-2-redirect{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    gap: 30px;
+    img{
+        width: 29.7rem;
+    }
+}
+
+.sec-2-redirect-btn{
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    button{
+        cursor: pointer;
+        padding: 20px 50px;
+        text-transform: uppercase;
+        background-color: transparent;
+        border: 1px solid var(--first-color);
+        border-radius: 8px;
+        transition: 1s ease-in-out;
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            fill: none;
+            border-radius: 8px;
+            stroke: var(--first-color);
+            stroke-dasharray: 150 480;
+            stroke-dashoffset: 150;
+            transition: 1s ease-in-out;
+        }
+        &:hover {
+            transition: 1s ease-in-out;
+            svg{
+                stroke-dashoffset: -480;
+            }
+        }
+    }
+    i{
+        position: absolute;
+        right: 1.1rem;
+        bottom: -1.38rem;
+        background-color: var(--third-color);
+        padding: 0 10px;
+        font-size: 1.6rem;
+    }
+}
