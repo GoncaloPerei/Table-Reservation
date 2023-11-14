@@ -129,8 +129,17 @@ a {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  gap: 0.5rem;
+  gap: 10px;
   line-height: 1.2;
+}
+.sec-2-info h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  width: 10.3rem;
+  height: 0.27rem;
+  background-color: var(--forth-color);
 }
 .sec-2-info span {
   color: var(--forth-color);
@@ -148,7 +157,7 @@ a {
   gap: 30px;
 }
 .sec-2-redirect img {
-  width: 27.7rem;
+  width: 29.7rem;
 }
 
 .sec-2-redirect-btn {
@@ -166,12 +175,32 @@ a {
   background-color: transparent;
   border: 1px solid var(--first-color);
   border-radius: 8px;
+  transition: 1s ease-in-out;
+}
+.sec-2-redirect-btn button svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  border-radius: 8px;
+  stroke: var(--first-color);
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+.sec-2-redirect-btn button:hover {
+  transition: 1s ease-in-out;
+}
+.sec-2-redirect-btn button:hover svg {
+  stroke-dashoffset: -480;
 }
 .sec-2-redirect-btn i {
   position: absolute;
-  right: 20px;
-  bottom: -25px;
+  right: 1.1rem;
+  bottom: -1.38rem;
   background-color: var(--third-color);
   padding: 0 10px;
-  font-size: 30px;
+  font-size: 1.6rem;
 }/*# sourceMappingURL=style.css.map */
