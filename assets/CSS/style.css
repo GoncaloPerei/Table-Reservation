@@ -5,6 +5,7 @@
   padding: 0;
   border: 0;
   text-decoration: none;
+  list-style: none;
 }
 
 :root {
@@ -22,36 +23,61 @@ html {
   font-feature-settings: "liga", "dlig";
 }
 
+a {
+  color: var(--first-color);
+  text-transform: uppercase;
+}
+
 .giga {
-  font-size: 6.5rem; /* 118 / 18 = 6.5 */
+  font-size: 6.5rem; /* 112 / 18 =  */
 }
 
 .mega {
-  font-size: 4.8rem; /* 88 / 18 = 4.8 */
+  font-size: 4.8rem; /* 82 / 18 =  */
 }
 
 .alpha {
-  font-size: 3.7rem; /* 68 / 18 = 3.7 */
+  font-size: 3.7rem; /* 62 / 18 =  */
 }
 
 .beta {
-  font-size: 2.6rem; /* 48 / 18 = 2.6 */
+  font-size: 2.6rem; /* 42 / 18 =  */
 }
 
 .gamma {
-  font-size: 2.1rem; /* 38 / 18 = 2.1 */
+  font-size: 1.7rem; /* 32 / 18 = 1.7 */
 }
 
 .delta {
-  font-size: 1.6rem; /* 30 / 18 = 1.6 */
+  font-size: 1.6rem; /* 26 / 18 =  */
 }
 
 .epsilon {
-  font-size: 1.3rem; /* 24 / 18 = 1.3 */
+  font-size: 1rem; /* 18 / 18 = 1 */
 }
 
 .zeta {
-  font-size: 1.1rem; /* 20 / 18 = 1.1 */
+  font-size: 1.1rem; /* 14 / 18 =  */
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .logo-icon {
@@ -60,11 +86,11 @@ html {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-size: 2rem;
   font-family: "Poppins", sans-serif;
   font-weight: 900;
+  font-size: 2rem;
   text-transform: uppercase;
-  letter-spacing: -0.55rem;
+  letter-spacing: -12px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
