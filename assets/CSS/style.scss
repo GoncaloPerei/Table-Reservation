@@ -166,6 +166,8 @@ a{
     width: fit-content;
     height: fit-content;
     button{
+        width: fit-content;
+        height: fit-content;
         cursor: pointer;
         padding: 20px 50px;
         text-transform: uppercase;
@@ -173,20 +175,21 @@ a{
         border: 1px solid var(--first-color);
         border-radius: 8px;
         transition: 1s ease-in-out;
-        svg {
+        outline: none;
+        svg{
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            fill: none;
             border-radius: 8px;
+            fill: none;
             stroke: var(--first-color);
             stroke-dasharray: 150 480;
             stroke-dashoffset: 150;
             transition: 1s ease-in-out;
         }
-        &:hover {
+        &:hover{
             transition: 1s ease-in-out;
             svg{
                 stroke-dashoffset: -480;
