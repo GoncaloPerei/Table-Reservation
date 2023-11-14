@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@900&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
 * {
   box-sizing: border-box;
@@ -94,4 +95,83 @@ a {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+/* ============================= */
+/* ========== SECÇÃO 2 ========= */
+/* ============================= */
+.main-wrapper {
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.sec-2-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0px 80px;
+  text-transform: uppercase;
+}
+
+.sec-2-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 0.5rem;
+  line-height: 1.2;
+}
+.sec-2-info span {
+  color: var(--forth-color);
+}
+
+.sec-2-redirect {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+  gap: 30px;
+}
+.sec-2-redirect img {
+  width: 27.7rem;
+}
+
+.sec-2-redirect-btn {
+  position: relative;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.sec-2-redirect-btn button {
+  cursor: pointer;
+  padding: 20px 50px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--first-color);
+  border-radius: 8px;
+}
+.sec-2-redirect-btn i {
+  position: absolute;
+  right: 20px;
+  bottom: -25px;
+  background-color: var(--third-color);
+  padding: 0 10px;
+  font-size: 30px;
 }/*# sourceMappingURL=style.css.map */
