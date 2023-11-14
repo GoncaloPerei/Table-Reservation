@@ -12,12 +12,18 @@
   justify-content: space-between;
   padding: 50px 0;
   border-right: 1px solid #000;
+  transform: translateX(-19.4rem);
+  transition: transform 0.5s ease-in-out;
 }
 .nav-bar a {
   transition: transform 0.2s ease-in-out;
 }
 .nav-bar a:hover {
   transform: scale(1.2);
+}
+
+.open {
+  transform: translateX(0);
 }
 
 .nav-head-icon {
