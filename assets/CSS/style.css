@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@900&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --first-color: #000000;
+  --second-color: #FBF751;
+  --third-color: #FFFFFF;
+  --forth-color: #75B09C;
+  --fifth-color: #998650;
+}
+
+html {
+  font: normal 112.5%/1.65 serif;
+  -ms-font-feature-settings: "liga", "dlig";
+  -o-font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga", "dlig";
+}
+
+a {
+  color: var(--first-color);
+  text-transform: uppercase;
+}
+
+.giga {
+  font-size: 6.5rem; /* 112 / 18 =  */
+}
+
+.mega {
+  font-size: 4.8rem; /* 82 / 18 =  */
+}
+
+.alpha {
+  font-size: 3.7rem; /* 62 / 18 =  */
+}
+
+.beta {
+  font-size: 2.6rem; /* 42 / 18 =  */
+}
+
+.gamma {
+  font-size: 1.7rem; /* 32 / 18 = 1.7 */
+}
+
+.delta {
+  font-size: 1.6rem; /* 26 / 18 =  */
+}
+
+.epsilon {
+  font-size: 1rem; /* 18 / 18 = 1 */
+}
+
+.zeta {
+  font-size: 1.1rem; /* 14 / 18 =  */
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.logo-icon {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}/*# sourceMappingURL=style.css.map */
