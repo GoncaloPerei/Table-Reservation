@@ -324,3 +324,28 @@ a{
         letter-spacing: 2px;
     }
 }
+
+/* ============================= 
+   ========== SECÇÃO 5 ========= 
+   ========== SECÇÃO 5 ========= 
+   ========== SECÇÃO 5 ========= 
+   ============================= */
+
+.textcircle{
+    text{
+        animation: rotate 25s linear infinite;
+        transform-origin: 50% 50%;
+    }
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotateReverse {
+	to {
+		transform: rotate(-360deg);
+	}
+}
