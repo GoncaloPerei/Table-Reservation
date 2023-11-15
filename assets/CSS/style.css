@@ -296,4 +296,33 @@ a {
   text-transform: none;
   font-variant: all-small-caps;
   letter-spacing: 2px;
+}
+
+/* ============================= 
+   ========== SECÇÃO 4 ========= 
+   ========== SECÇÃO 4 ========= 
+   ========== SECÇÃO 4 ========= 
+   ============================= */
+.section-4 {
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--second-color);
+  align-items: center;
+}
+.section-4 p {
+  text-transform: none;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+
+.sec-4-reviews {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+.sec-4-reviews h1 {
+  text-align: right;
+  letter-spacing: 2px;
 }/*# sourceMappingURL=style.css.map */
