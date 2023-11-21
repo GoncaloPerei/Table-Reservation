@@ -127,11 +127,6 @@ a {
   text-transform: uppercase;
 }
 
-/* ============================= 
-   ========== SECÇÃO 2 ========= 
-   ========== SECÇÃO 2 ========= 
-   ========== SECÇÃO 2 ========= 
-   ============================= */
 .main-wrapper {
   position: relative;
   display: block;
@@ -141,6 +136,54 @@ a {
   overflow-x: hidden;
 }
 
+.btn-type-1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+  padding: 20px 50px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--first-color);
+  border-radius: 8px;
+  transition: 1s ease-in-out;
+  outline: none;
+}
+
+/* ============================= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ============================= */
+.section-1 {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--second-color);
+}
+
+.sec-1 {
+  align-items: center;
+}
+
+.sec-1-redirect-btn {
+  position: absolute;
+  bottom: -140px;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+/* ============================= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ============================= */
 .section-2 {
   flex-direction: row;
   justify-content: space-between;
@@ -171,33 +214,7 @@ a {
   align-items: center;
   gap: 30px;
 }
-.sec-2-redirect img {
-  width: 29.7rem;
-}
-
-.sec-2-redirect-btn {
-  position: relative;
-  display: block;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-.sec-2-redirect-btn button {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  cursor: pointer;
-  padding: 20px 50px;
-  text-transform: uppercase;
-  background-color: transparent;
-  border: 1px solid var(--first-color);
-  border-radius: 8px;
-  transition: 1s ease-in-out;
-  outline: none;
-}
-.sec-2-redirect-btn button svg {
+.sec-2-redirect button svg {
   position: absolute;
   left: 0;
   top: 0;
@@ -210,11 +227,23 @@ a {
   stroke-dashoffset: 150;
   transition: 1s ease-in-out;
 }
-.sec-2-redirect-btn button:hover {
+.sec-2-redirect button:hover {
   transition: 1s ease-in-out;
 }
-.sec-2-redirect-btn button:hover svg {
+.sec-2-redirect button:hover svg {
   stroke-dashoffset: -480;
+}
+.sec-2-redirect img {
+  width: 29.7rem;
+}
+
+.sec-2-redirect-btn {
+  position: relative;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .sec-2-redirect-btn i {
   position: absolute;
