@@ -332,18 +332,12 @@ a {
    ========== SECÇÃO 5 ========= 
    ========== SECÇÃO 5 ========= 
    ============================= */
-.textcircle text {
-  animation: rotate 25s linear infinite;
-  transform-origin: 50% 50%;
+.section-5 {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotateReverse {
-  to {
-    transform: rotate(-360deg);
-  }
+.sec-5 h1 span {
+  color: var(--forth-color);
 }/*# sourceMappingURL=style.css.map */
