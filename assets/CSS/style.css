@@ -73,6 +73,14 @@ a {
   font-weight: 100;
 }
 
+.extralight {
+  font-weight: 200;
+}
+
+.light {
+  font-weight: 300;
+}
+
 .regular {
   font-weight: 400;
 }
@@ -97,30 +105,239 @@ a {
           user-select: none;
 }
 
-/* Secção 1 */
-.seccao1 {
-  background-color: #FBF751;
+.sec-info {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 10px;
+  line-height: 1.2;
+}
+
+.sec-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 125px 80px;
+  text-transform: uppercase;
+}
+
+/* ============================= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ============================= */
+.main-wrapper {
+  position: relative;
+  display: block;
   width: 100vw;
   height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-.seccao1 .h2 {
-  color: #000000;
-  font-size: 6.5rem;
+
+.section-2 {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.seccao1 .p {
-  color: #000000;
-  font-size: 4.8rem;
-}
-.seccao1 .btn-FINDTABLE {
-  padding: 10px 40px;
-  border: 2px solid black;
-  border-radius: 5px;
-  cursor: pointer;
+
+.sec-2 h1::after {
+  content: "";
   position: absolute;
-  bottom: 100px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -10px;
+  right: 30px;
+  width: 10.3rem;
+  height: 0.27rem;
+  background-color: var(--forth-color);
+}
+.sec-2 span {
+  color: var(--forth-color);
+}
+
+.sec-2-redirect {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+  gap: 30px;
+}
+.sec-2-redirect img {
+  width: 29.7rem;
+}
+
+.sec-2-redirect-btn {
+  position: relative;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.sec-2-redirect-btn button {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  cursor: pointer;
+  padding: 20px 50px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid var(--first-color);
+  border-radius: 8px;
+  transition: 1s ease-in-out;
+  outline: none;
+}
+.sec-2-redirect-btn button svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  fill: none;
+  stroke: var(--first-color);
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+.sec-2-redirect-btn button:hover {
+  transition: 1s ease-in-out;
+}
+.sec-2-redirect-btn button:hover svg {
+  stroke-dashoffset: -480;
+}
+.sec-2-redirect-btn i {
+  position: absolute;
+  right: 1.1rem;
+  bottom: -1.38rem;
+  background-color: var(--third-color);
+  padding: 0 10px;
+  font-size: 1.6rem;
+}
+
+/* ============================= 
+   ========== SECÇÃO 3 ========= 
+   ========== SECÇÃO 3 ========= 
+   ========== SECÇÃO 3 ========= 
+   ============================= */
+.section-3 {
+  flex-direction: column;
+  align-items: center;
+  gap: 125px;
+}
+
+.sec-3 {
+  align-items: center;
+}
+.sec-3 h1 span {
+  color: var(--fifth-color);
+}
+
+.sec-3-box-wrapper {
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 150px;
+}
+
+.sec-3-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 374px;
+  height: 394px;
+  padding: 54px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.sec-3-box img {
+  width: 80px;
+  height: 80px;
+  color: #998650;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sec-3-box-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.sec-3-box-info h2 {
+  font-size: 1.8rem;
+  color: var(--forth-color);
+}
+.sec-3-box-info p {
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: none;
+  font-variant: all-small-caps;
+  letter-spacing: 2px;
+}
+
+/* ============================= 
+   ========== SECÇÃO 4 ========= 
+   ========== SECÇÃO 4 ========= 
+   ========== SECÇÃO 4 ========= 
+   ============================= */
+.section-4 {
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--second-color);
+  align-items: center;
+}
+.section-4 p {
+  text-transform: none;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+
+.sec-4-reviews {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+.sec-4-reviews h1 {
+  text-align: right;
+  letter-spacing: 2px;
+}
+
+/* ============================= 
+   ========== SECÇÃO 5 ========= 
+   ========== SECÇÃO 5 ========= 
+   ========== SECÇÃO 5 ========= 
+   ============================= */
+.section-5 {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sec-5 h1 span {
+  color: var(--forth-color);
 }/*# sourceMappingURL=style.css.map */

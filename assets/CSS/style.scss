@@ -71,8 +71,17 @@ a{
     font-family: 'Raleway', sans-serif;
 }
 
+
 .thin{
     font-weight: 100;
+}
+
+.extralight{
+    font-weight: 200;
+}
+
+.light{
+    font-weight: 300;
 }
 
 .regular{
@@ -95,32 +104,268 @@ a{
     user-select: none;
 }
 
-/* Secção 1 */
-
-.seccao1 {
-    background-color: #FBF751;
+.sec-info{
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    gap: 10px;
+    line-height: 1.2;
+}
+
+.sec-wrapper{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 125px 80px;
+    text-transform: uppercase;
+}
+
+/* ============================= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ========== SECÇÃO 2 ========= 
+   ============================= */
+
+
+.main-wrapper{
+    position: relative;
+    display: block;
     width: 100vw;
     height: 100vh;
-    .h2{
-        color: #000000;
-        font-size: 6.5rem;
-    }
-    .p{
-        color: #000000;
-        font-size: 4.8rem;
-    }
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
-    .btn-FINDTABLE{
-        padding: 10px 40px;
-        border: 2px solid black;
-        border-radius: 5px;
-        cursor: pointer;
-        position: absolute;
-        bottom: 100px;
-        left: 50%;
-        transform: translateX(-50%);
+.section-2{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sec-2{
+    h1{
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 30px;
+            width: 10.3rem;
+            height: .27rem;
+            background-color: var(--forth-color);
+        }
+    }
+    span{
+        color: var(--forth-color);
     }
 }
+
+.sec-2-redirect{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    gap: 30px;
+    img{
+        width: 29.7rem;
+    }
+}
+
+.sec-2-redirect-btn{
+    position: relative;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    button{
+        width: fit-content;
+        height: fit-content;
+        cursor: pointer;
+        padding: 20px 50px;
+        text-transform: uppercase;
+        background-color: transparent;
+        border: 1px solid var(--first-color);
+        border-radius: 8px;
+        transition: 1s ease-in-out;
+        outline: none;
+        svg{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            fill: none;
+            stroke: var(--first-color);
+            stroke-dasharray: 150 480;
+            stroke-dashoffset: 150;
+            transition: 1s ease-in-out;
+        }
+        &:hover{
+            transition: 1s ease-in-out;
+            svg{
+                stroke-dashoffset: -480;
+            }
+        }
+    }
+    i{
+        position: absolute;
+        right: 1.1rem;
+        bottom: -1.38rem;
+        background-color: var(--third-color);
+        padding: 0 10px;
+        font-size: 1.6rem;
+    }
+}
+
+/* ============================= 
+   ========== SECÇÃO 3 ========= 
+   ========== SECÇÃO 3 ========= 
+   ========== SECÇÃO 3 ========= 
+   ============================= */
+
+
+.section-3{
+    flex-direction: column;
+    align-items: center;
+    gap: 125px;
+}
+
+.sec-3{
+    align-items: center;
+    h1{
+        span{
+            color: var(--fifth-color);
+        }
+    }
+}
+
+.sec-3-box-wrapper{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 150px;
+}
+
+.sec-3-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 374px;
+    height: 394px;
+    padding: 54px 40px;
+    border: 1px solid rgb(0, 0, 0, 10%);
+    border-radius: 14px;
+    box-shadow: 4px 4px 4px 0px rgba(0,0,0,25%);
+    img{
+        width: 80px;
+        height: 80px;
+        color: #998650;
+        object-fit: cover;
+    }
+}
+
+.sec-3-box-info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    h2{
+        font-size: 1.8rem;
+        color: var(--forth-color);
+    }
+    p{
+        font-size: 1.4rem;
+        text-align: center;
+        text-transform: none;
+        font-variant: all-small-caps;
+        letter-spacing: 2px;
+    }
+}
+
+/* ============================= 
+   ========== SECÇÃO 4 ========= 
+   ========== SECÇÃO 4 ========= 
+   ========== SECÇÃO 4 ========= 
+   ============================= */
+
+.section-4{
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--second-color);
+    align-items: center;
+    p{
+        text-transform: none;
+        font-variant: small-caps;
+        letter-spacing: 2px;
+    }
+}
+
+.sec-4-reviews{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    h1{
+        text-align: right;
+        letter-spacing: 2px;
+    }
+}
+
+/* ============================= 
+   ========== SECÇÃO 5 ========= 
+   ========== SECÇÃO 5 ========= 
+   ========== SECÇÃO 5 ========= 
+   ============================= */
+
+.section-5{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sec-5{
+    h1{
+        span{
+            color: var(--forth-color);
+        }
+    }
+}
+
+// svg{
+//     max-width: 80vmin;
+//     .textcircle{
+//         transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
+//         transform-origin: 250px 250px;
+//         text{
+//             animation: rotate 25s linear infinite;
+//             transform-origin: 250px 250px;
+//             font-size: 200px;
+//         }
+//     }
+//     &:hover{
+//         .textcircle {
+//             transform: scale(1.2)
+//             rotate(90deg);
+//         }
+//     }
+// }
+
+// @keyframes rotate {
+// 	to {
+// 		transform: rotate(360deg);
+// 	}
+// }
