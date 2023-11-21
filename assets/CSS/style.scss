@@ -369,3 +369,23 @@ a{
 // 		transform: rotate(360deg);
 // 	}
 // }
+
+/* ============================= 
+   ========== SECÇÃO 6 ========= 
+   ========== SECÇÃO 6 ========= 
+   ========== SECÇÃO 6 ========= 
+   ============================= */
+
+.section-6{
+    flex-direction: column;
+    align-items: center;
+}
+
+.sec-6{
+    align-items: center;
+    h1{
+        span{
+            color: var(--forth-color);
+        }
+    }
+}

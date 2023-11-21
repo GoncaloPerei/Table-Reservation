@@ -340,4 +340,21 @@ a {
 
 .sec-5 h1 span {
   color: var(--forth-color);
+}
+
+/* ============================= 
+   ========== SECÇÃO 6 ========= 
+   ========== SECÇÃO 6 ========= 
+   ========== SECÇÃO 6 ========= 
+   ============================= */
+.section-6 {
+  flex-direction: column;
+  align-items: center;
+}
+
+.sec-6 {
+  align-items: center;
+}
+.sec-6 h1 span {
+  color: var(--forth-color);
 }/*# sourceMappingURL=style.css.map */
