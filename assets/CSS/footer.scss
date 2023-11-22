@@ -1,0 +1,10 @@
+.footer-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    text-transform: uppercase;
+    background-color: var(--second-color);
+}
