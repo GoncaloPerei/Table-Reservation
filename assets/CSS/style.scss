@@ -33,40 +33,41 @@ a{
 }
 
 .giga{
-    font-size: 11.8rem;
+    font-size: clamp(52px, 8vw + 1rem, 118px);
 }
 
 .mega{
-    font-size: 8.8rem;
+    font-size: clamp(48px, 7vw + 1rem, 88px);
 }
 
 .alpha{
-    font-size: 6.8rem;
-}
-
-.zota{
-    font-size: 5.8rem;
+    font-size: clamp(38px, 6vw + 1rem, 68px);
 }
 
 .beta{
-    font-size: 4.8rem;
+    font-size: clamp(36px, 5vw + 1rem, 48px);
+}
+
+.zota{
+    font-size: clamp(26px, 2vw + 1rem, 38px);
 }
 
 .gamma{
-    font-size: 3.8rem;
+    font-size: clamp(24px, 4vw + 1rem, 38px);
 }
 
 .delta{
-    font-size: 2.4rem;
-}
-
-.epsilon{
-    font-size: 2rem;
+    font-size: clamp(22px, 1vw + 1rem, 24px);
 }
 
 .zeta{
-    font-size: 1.1rem;
+    font-size: clamp(18px, 1vw + 1rem, 28px);
 }
+
+.epsilon{
+    font-size: clamp(12px, .8vw + 1rem, 20px);
+}
+
 
 .montserrat{
     font-family: 'Montserrat', sans-serif;
@@ -99,13 +100,7 @@ a{
 
 .logo-icon{
     display: block;
-    width: fit-content;
-    height: fit-content;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: -12px;
+    width: 42px;
     user-select: none;
 }
 
@@ -186,20 +181,10 @@ a{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgb(128, 128, 128, 20%);
 }
 
 .sec-2{
-    h1{
-        &::after{
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 30px;
-            width: 10.3rem;
-            height: .27rem;
-            background-color: var(--forth-color);
-        }
-    }
     span{
         color: var(--forth-color);
     }
@@ -213,28 +198,6 @@ a{
     height: fit-content;
     align-items: center;
     gap: 30px;
-    button{
-        transition: 1s ease-in-out;
-        svg{
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            fill: none;
-            stroke: var(--first-color);
-            stroke-dasharray: 150 480;
-            stroke-dashoffset: 150;
-            transition: 1s ease-in-out;
-        }
-        &:hover{
-            transition: 1s ease-in-out;
-            svg{
-                stroke-dashoffset: -480;
-            }
-        }
-    }
     img{
         width: 29.7rem;
     }
@@ -317,15 +280,17 @@ a{
     width: 100%;
     height: fit-content;
     h2{
-        font-size: 1.8rem;
+        font-size: clamp(2rem, 2vw + 1rem, 3rem);
         color: var(--forth-color);
+        letter-spacing: 2px;
     }
     p{
-        font-size: 1.4rem;
+        font-size: clamp(1.4rem, 2vw + 1rem, 2.4rem);
         text-align: center;
         text-transform: none;
         font-variant: all-small-caps;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
+        line-height: 1.5;
     }
 }
 
@@ -343,7 +308,8 @@ a{
     p{
         text-transform: none;
         font-variant: small-caps;
-        letter-spacing: 2px;
+        letter-spacing: 10px;
+        line-height: 2;
     }
 }
 
@@ -356,6 +322,10 @@ a{
     h1{
         text-align: right;
         letter-spacing: 2px;
+        span{
+            display: block;
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -369,6 +339,7 @@ a{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgb(128, 128, 128, 20%);
 }
 
 .sec-5{
@@ -406,7 +377,8 @@ a{
     flex-direction: column;
     align-items: end;
     gap: 40px;
-    max-width: 54.4rem;
+    width: 70%;
+    min-width: 380px;
     height: fit-content;
     padding: 70px 30px;
     border: 1px solid rgb(0, 0, 0, 10%);
@@ -440,10 +412,10 @@ form{
 .contact-ipt-container{
     position: relative;
     display: flex;
-    flex-direction: row;
-    gap: 10px;
     width: 100%;
-    height: fit-content;
+    gap: 10px;
+    height: auto;
+    overflow: hidden;
 }
 
 .contact-ipt{
@@ -464,7 +436,6 @@ form{
     color: var(--fifth-color);
     border: 2px solid var(--fifth-color);
     padding: 20px 40px;
-    font-size: 1.2rem;
     letter-spacing: 2px;
     &:after {
         content: '';
@@ -512,6 +483,9 @@ form{
 }
 
 @media all and (max-width: 480px) {
+    .section-6{
+        font-size: 4px;
+    }
 }
 
 @media screen and (orientation:portrait) {
@@ -521,10 +495,20 @@ form{
     }
     .section-2{
         flex-direction: column;
+        gap: 90px;
+    }
+    .sec-2{
+        text-align: left;
+        align-items: baseline;
+        width: 100%;
     }
     .section-4{
         flex-direction: column;
         text-align: center;
+        gap: 90px;
+    }
+    .sec-4-reviews{
+        width: 100%;
     }
     .sec-6-contact{
         align-items: center;
