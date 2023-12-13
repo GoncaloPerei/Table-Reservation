@@ -56,10 +56,33 @@
         </div>
         <div class="main-wrapper" id="">
             <section class="section-1 sec-wrapper">
+                <div class="sec-1-search-bar op-0">
+                    <div class="sec-1-search-bar-box">
+                        <i class="bi bi-pin-map"></i>
+                        <input type="text" placeholder="porto" class="delta light raleway">
+                    </div>
+                    <div class="sec-1-search-bar-box">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="restaurant name, food type" class="delta light raleway">
+                    </div>
+                    <button class="delta bold montserrat">search</button>
+                </div>
                 <div class="sec-1 sec-info">
                     <p class="beta thin raleway">yes, a table</p>
                     <h1 class="giga bold montserrat">reservation</h1>
                     <p class="zota thin raleway">system</p>
+                </div>
+                <div class="sec-1-search-bar">
+                    <div class="sec-1-search-bar-box" id="sec-1-search-box-1">
+                        <i class="bi bi-pin-map"></i>
+                        <input type="text" placeholder="porto" class="delta light raleway" id="sec-1-ipt-1" onfocus="handleFocus('sec-1-search-box-1')" onblur="handleBlur('sec-1-search-box-1')">
+                    </div>
+                    <div class="line"></div>
+                    <div class="sec-1-search-bar-box" id="sec-1-search-box-2">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="restaurant name, food type" class="delta light raleway" id="sec-1-ipt-2" onfocus="handleFocus('sec-1-search-box-2')" onblur="handleBlur('sec-1-search-box-2')">
+                    </div>
+                    <button class="delta bold montserrat">search</button>
                 </div>
             </section>
             <section class="section-2 sec-wrapper" id="">

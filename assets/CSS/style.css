@@ -147,6 +147,17 @@ a {
   outline: none;
 }
 
+.op-0 {
+  opacity: 0;
+}
+
+.line {
+  position: relative;
+  width: 1px;
+  height: auto;
+  background-color: var(--first-color);
+}
+
 /* ============================= 
    ========== SECÇÃO 2 ========= 
    ========== SECÇÃO 2 ========= 
@@ -156,6 +167,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 60px;
   width: 100%;
   height: 100vh;
   background-color: var(--second-color);
@@ -173,6 +185,68 @@ a {
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.sec-1-search-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid var(--first-color);
+}
+.sec-1-search-bar button {
+  padding: 15px 35px;
+  border: 1px solid var(--first-color);
+  background-color: transparent;
+  border-radius: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.sec-1-search-bar button:hover {
+  background-color: var(--first-color);
+  color: var(--third-color);
+}
+
+.sec-1-search-bar-box {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+.sec-1-search-bar-box i {
+  font-size: 2.6rem;
+}
+.sec-1-search-bar-box input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.sec-1-search-bar-box input:focus .sec-1-search-bar-box {
+  background-color: #75B09C;
+}
+.sec-1-search-bar-box input::-moz-placeholder {
+  text-transform: capitalize;
+  color: var(--first-color);
+}
+.sec-1-search-bar-box input::placeholder {
+  text-transform: capitalize;
+  color: var(--first-color);
+}
+.sec-1-search-bar-box input:-moz-placeholder-shown {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sec-1-search-bar-box input:placeholder-shown {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* ============================= 
