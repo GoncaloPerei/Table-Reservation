@@ -3,8 +3,42 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
+    align-items: baseline;
+    padding: 50px 80px;
     text-transform: uppercase;
     background-color: var(--second-color);
+    width: auto;
+    height: fit-content;
+}
+
+.footer-links{
+    position: relative;
+    width: auto;
+    height: auto;
+    ul{
+        display: block;
+        li{
+            font-variant: all-small-caps;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.footer-socials{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: auto;
+}
+
+.footer-socials-icons{
+    position: relative;
+    display: inline-block;
+    a{
+        padding-right: 50px;
+    }
+    i{
+        font-size: 3.5rem;
+    }
 }
