@@ -10,3 +10,14 @@ document.addEventListener('click', function(event) {
         navBar.classList.remove('open');
     }
 });
+
+function handleFocus(searchBoxId) {
+    const searchBox = document.getElementById(searchBoxId);
+    searchBox.style.border = "1px solid #000000";
+}
+
+function handleBlur(searchBoxId) {
+    const searchBox = document.getElementById(searchBoxId);
+    searchBox.style.border = "none";
+}
+
