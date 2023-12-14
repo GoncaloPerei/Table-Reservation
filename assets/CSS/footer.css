@@ -10,6 +10,8 @@
   width: auto;
   height: -moz-fit-content;
   height: fit-content;
+  letter-spacing: 2px;
+  line-height: 1.5;
 }
 
 .footer-links {
