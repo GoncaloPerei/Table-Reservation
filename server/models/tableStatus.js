@@ -10,5 +10,5 @@ module.exports = (sequelize, DataTypes) => {
         table_capacity:{type:DataTypes.INTEGER,},
     });
 
-    return Tables;
+    return TableStatus;
 }

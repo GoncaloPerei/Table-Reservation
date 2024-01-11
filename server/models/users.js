@@ -19,8 +19,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         administrador:{
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
+            type: DataTypes.BOOLEAN
         },
     });
 
