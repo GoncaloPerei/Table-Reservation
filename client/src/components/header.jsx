@@ -1,8 +1,11 @@
 import {useState, useEffect, useRef} from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import { Hourglass, ShopWindow, QuestionCircle, Facebook, Instagram, PersonFill } from 'react-bootstrap-icons';
 
 const Header = () => {
+
+    const { loginWithRedirect } = useAuth0();
 
     const [nav, setNav] = useState(false);
     
@@ -35,11 +38,9 @@ const Header = () => {
                 <Hourglass id='navbar-hamburguer' onClick={handleNav} className='text-3xl cursor-pointer' />
                 <img src={"./tr.svg"} alt=""/>
             </div>
-            <a href="/login/">
-                <button className="w-fit h-fit rounded-full border border-black border-solid p-4 cursor-pointer">
-                    <PersonFill className="text-2xl"/>
-                </button>
-            </a>
+            <button onClick={loginWithRedirect} className="w-fit h-fit rounded-full border border-black border-solid p-4 cursor-pointer">
+                <PersonFill className="text-2xl"/>
+            </button>
             {
                 nav ? (
                     <div className='absolute top-0 left-0 z-[100] bg-[#FBF751] flex flex-col items-center justify-between gap-8 w-[20%] h-screen font-raleway uppercase py-12'>
