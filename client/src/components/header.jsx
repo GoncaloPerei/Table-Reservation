@@ -1,11 +1,11 @@
-import {useState, useEffect, useRef} from "react"
+import {useState, useEffect, useRef} from "react";
 
-import { Hourglass, ShopWindow, QuestionCircle, Facebook, Instagram, PersonFill } from 'react-bootstrap-icons'
+import { Hourglass, ShopWindow, QuestionCircle, Facebook, Instagram, PersonFill } from 'react-bootstrap-icons';
 
 const Header = () => {
 
     const [nav, setNav] = useState(false);
-
+    
     const handleNav = () => {
         setNav(!nav);
     }
@@ -36,9 +36,9 @@ const Header = () => {
                 <img src={"./tr.svg"} alt=""/>
             </div>
             <a href="/login/">
-                <div id='login-hamburguer' className="w-fit h-fit rounded-full border border-black border-solid p-4 cursor-pointer">
+                <button className="w-fit h-fit rounded-full border border-black border-solid p-4 cursor-pointer">
                     <PersonFill className="text-2xl"/>
-                </div>
+                </button>
             </a>
             {
                 nav ? (
@@ -84,7 +84,7 @@ const Header = () => {
                 )
             }
         </div>
-    )
+    );
 }
 
-export default Header
+export default Header;
