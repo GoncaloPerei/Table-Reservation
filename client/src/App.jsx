@@ -1,11 +1,11 @@
 import './App.css';
-import {useState, useEffect} from 'react';
-import Header from './components/header';
-import Footer from './components/footer'
+// import {useState, useEffect} from 'react';
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Reserve from './pages/Reserve'
+import Book from './pages/Book';
 import { Routes, Route } from 'react-router-dom';
 
 function App(){
@@ -17,7 +17,7 @@ function App(){
         <Route path='/home' element={<Home/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
-        <Route path='/reserve' element={<Reserve/>} />
+        <Route path='/book' element={<Book/>} />
       </Routes>
       <Footer />
     </div>

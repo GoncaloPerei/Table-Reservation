@@ -6,16 +6,16 @@ const Footer = () => {
             <div className="w-full h-fit flex justify-between bg-[#FBF751] px-20 py-12 uppercase items-center">
                 <img src={"./tr.svg"} alt=""/>
                 <div className="flex flex-col text-3xl leading-loose font-raleway">
-                    <a href="">
+                    <a href="/home">
                         home
                     </a>
-                    <a href="">
+                    <a href="/about">
                         about tr - table reservation
                     </a>
-                    <a href="">
+                    <a href="/book">
                         book a table
                     </a>
-                    <a href="">
+                    <a href="/contact">
                         affiliate your restaurant
                     </a>
                 </div>
