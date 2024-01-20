@@ -10,7 +10,7 @@ function Home(){
                     <span className="font-montserrat font-bold text-9xl leading-tight">reservation<br /></span>
                     system
                 </span>
-                <a href="/book" className="text-4xl font-montserrat font-bold border border-black rounded-xl px-10 py-5">book now</a>
+                <a href="/book" className="hover:before:bg-blackborder-black-500 relative w-fit text-4xl font-montserrat font-bold rounded-xl px-10 py-5 overflow-hidden border border-black bg-transparent transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"><span className="relative z-10">book now</span></a>
             </div>
             <div className="w-full flex justify-between items-center px-20 py-40 uppercase tracking-wider border-b border-[#808080]/20">
                 <span className="text-4xl font-raleway font-thin">
@@ -19,7 +19,7 @@ function Home(){
                 </span>
                 <div className="flex flex-col items-center gap-7">
                     <img src={"./table.svg"} alt=""/>
-                    <a href="/book" className="w-fit text-4xl font-montserrat font-bold border border-black rounded-xl px-10 py-5">book now</a>
+                    <a href="/book" className="hover:before:bg-blackborder-black-500 relative w-fit text-4xl font-montserrat font-bold rounded-xl px-10 py-5 overflow-hidden border border-black bg-transparent transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"><span className="relative z-10">book now</span></a>
                 </div>
             </div>
             <div className="w-full flex flex-col px-20 py-40 gap-20">
@@ -28,21 +28,21 @@ function Home(){
                     <span className="text-4xl font-raleway leading-10 font-thin">everybody been asking...</span>
                 </span> 
                 <div className="flex justify-between">
-                    <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center justify-center">
+                    <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center justify-center hover:shadow-xl transition-all duration-500">
                         <img className="w-20" src={"./handshake.svg"} alt="" />
                         <div>
                             <h1 className="font-montserrat font-bold uppercase text-3xl text-[#75B09C] leading-relaxed mb-1.5">simplicity</h1>
                             <span className="font-raleway font-thin text-black text-2xl leading-normal tracking-wider">Very easy to get into to. Hard to mess things up.</span>
                         </div>
                     </div>
-                    <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center">
+                    <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center hover:shadow-xl transition-all duration-500">
                         <img className="w-20" src={"./arrange.svg"} alt="" />
                         <div>
                             <h1 className="font-montserrat font-bold uppercase text-3xl text-[#75B09C] leading-relaxed mb-1.5">arranje</h1>
                             <span className="font-raleway font-thin text-black text-2xl leading-normal tracking-wider">Reserve your table before getting to the restaurant.</span>
                         </div>
                     </div>
-                    <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center">
+                    <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center hover:shadow-xl transition-all duration-500">
                         <img className="w-20" src={"./time.svg"} alt="" />
                         <div>
                             <h1 className="font-montserrat font-bold uppercase text-3xl text-[#75B09C] leading-relaxed mb-1.5">waiting</h1>
