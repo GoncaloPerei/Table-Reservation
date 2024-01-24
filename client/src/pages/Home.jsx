@@ -1,5 +1,5 @@
-import UsersCount from "../components/layout/homeUsersCount";
-import UsersForm from "../components/layout/homeContactForm";
+import UsersCount from "../components/layout/home/homeUsersCount";
+import UsersForm from "../components/layout/home/homeContactForm";
 
 function Home(){
     return (
