@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useState, useEffect, useRef } from "react";
 
 import {
   Hourglass,
@@ -41,7 +41,7 @@ const Header = () => {
     <>
       <div
         ref={menuRef}
-        className="fixed w-full h-fit bg-[#FBF751] flex flex-row items-center justify-between px-20 py-4 z-50"
+        className="sticky top-0 w-full h-fit bg-[#FBF751] flex flex-row items-center justify-between px-20 py-4 z-50"
       >
         <div className="relative flex flex-row items-center gap-5">
           <Hourglass

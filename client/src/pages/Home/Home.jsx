@@ -1,5 +1,6 @@
-import UsersCount from "../components/layout/home/homeUsersCount";
-import UsersForm from "../components/layout/home/homeContactForm";
+import UsersCount from "./homeUsersCount";
+import UsersForm from "./homeContactForm";
+import Button1 from "../../components/ui/button1";
 
 function Home() {
   return (
@@ -14,12 +15,7 @@ function Home() {
           </span>
           system
         </span>
-        <a
-          href="/book"
-          className="hover:before:bg-blackborder-black-500 relative w-fit text-4xl font-montserrat font-bold rounded-xl px-10 py-5 overflow-hidden border border-black bg-transparent transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"
-        >
-          <span className="relative z-10">book now</span>
-        </a>
+        <Button1 href="/book" name="book now" />
       </div>
       <div className="w-full flex justify-between items-center px-20 py-40 uppercase tracking-wider border-b border-[#808080]/20">
         <span className="text-4xl font-raleway font-thin">
@@ -33,12 +29,7 @@ function Home() {
         </span>
         <div className="flex flex-col items-center gap-7">
           <img src={"./table.svg"} alt="" />
-          <a
-            href="/book"
-            className="hover:before:bg-blackborder-black-500 relative w-fit text-4xl font-montserrat font-bold rounded-xl px-10 py-5 overflow-hidden border border-black bg-transparent transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-black before:transition-all before:duration-500 hover:text-white hover:before:left-0 hover:before:w-full"
-          >
-            <span className="relative z-10">book now</span>
-          </a>
+          <Button1 href="/book" name="book now" />
         </div>
       </div>
       <div className="w-full flex flex-col px-20 py-40 gap-20">
@@ -93,7 +84,7 @@ function Home() {
           <br />
           your table at the restaurant.
           <br />
-          You simply{" "}
+          You simply
           <span className="font-bold">
             get in, sit and
             <br />
