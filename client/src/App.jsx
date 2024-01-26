@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-const Header = React.lazy(() => import("./layout/Header"));
-const Footer = React.lazy(() => import("./layout/Footer"));
+import { Header, Footer } from "./layout";
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const About = React.lazy(() => import("./pages/About"));
 const Contact = React.lazy(() => import("./pages/Contact"));

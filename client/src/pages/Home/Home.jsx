@@ -1,6 +1,5 @@
-import UsersCount from "./homeUsersCount";
-import UsersForm from "./homeContactForm";
-import Button1 from "../../components/ui/button1";
+import { ContactForm, UsersCount } from ".";
+import { Button1 } from "../../components";
 
 function Home() {
   return (
@@ -102,7 +101,7 @@ function Home() {
           </span>
         </span>
       </div>
-      <UsersForm />
+      <ContactForm />
     </>
   );
 }
