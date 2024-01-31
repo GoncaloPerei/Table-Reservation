@@ -83,14 +83,14 @@ const Header = () => {
           }`}
         >
           <img src={"./tr.svg"} alt="" className="w-10" />
-          <div className=" flex flex-col gap-8">
+          <div className=" flex flex-col gap-8 tracking-wider">
             <a href="/home" className="relative flex justify-center">
               <span className="text-3xl">home</span>
             </a>
             <a href="/about" className="relative flex justify-center">
               <span className="text-3xl">about us</span>
             </a>
-            <a href="/book" className="relative flex justify-center">
+            <a href="/reserve" className="relative flex justify-center">
               <span className="text-3xl">reserve</span>
             </a>
             <a href="/contact" className="relative flex justify-center">
