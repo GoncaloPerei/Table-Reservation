@@ -7,11 +7,11 @@ import {
   RestaurantMenu,
   RestaurantRatings,
   RestaurantFooter,
-} from ".";
+} from "./layout";
 
 import { Line } from "./components";
 
-function Reserve() {
+const Reserve = () => {
   return (
     <div className="w-full h-fit flex flex-col py-28 gap-12">
       <RestaurantImages />
@@ -28,6 +28,6 @@ function Reserve() {
       </div>
     </div>
   );
-}
+};
 
 export default Reserve;

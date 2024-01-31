@@ -1,7 +1,7 @@
-import { ContactForm, UsersCount } from ".";
+import { ContactForm, UsersCount } from "./layout";
 import { Button1 } from "../../components";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <div className="w-full h-screen bg-[#FBF751] flex flex-col items-center justify-center uppercase gap-16 tracking-wider">
@@ -104,6 +104,6 @@ function Home() {
       <ContactForm />
     </>
   );
-}
+};
 
 export default Home;
