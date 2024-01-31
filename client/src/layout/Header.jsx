@@ -97,21 +97,6 @@ const Header = () => {
               <span className="text-3xl">contact</span>
             </a>
           </div>
-          <button
-            onClick={loginWithRedirect}
-            className="relative flex justify-center w-full text-2xl pt-3 pb-3 underline uppercase border-y border-black border-solid"
-          >
-            login
-          </button>
-          <div className="relative w-full">
-            <a
-              href=""
-              className="relative flex items-center gap-5 w-full border-y border-black border-solid pl-6 pr-6 pt-4 pb-4"
-            >
-              <QuestionCircle className="text-xl" />
-              <span className="text-base">help</span>
-            </a>
-          </div>
           <div className="relative flex gap-12">
             <a href="#">
               <Facebook className="text-3xl" />
