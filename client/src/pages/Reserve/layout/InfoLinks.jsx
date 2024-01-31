@@ -1,5 +1,5 @@
 import { GeoAlt, Telephone } from "react-bootstrap-icons";
-import { Schedule } from "../.";
+import { Schedule } from "../components";
 
 const InfoLinks = () => {
   return (

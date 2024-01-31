@@ -1,4 +1,4 @@
-import { Heading } from "../.";
+import { Heading } from "../components";
 
 const InfoHeader = () => {
   return (

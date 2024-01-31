@@ -11,7 +11,7 @@ const RatingComponent = () => {
         <div className="flex items-center rounded-full border border-solid border-black p-4">
           <PersonFill className="text-2xl" />
         </div>
-        <div className="w-full uppercase tracking-wider leading-relaxed">
+        <div className="w-full tracking-wider leading-relaxed">
           <div className="flex gap-2.5">
             <span className="font-montserrat font-bold">Lorem</span>
             <span className="font-raleway font-light text-[#A8A8A8]">
@@ -20,7 +20,7 @@ const RatingComponent = () => {
           </div>
           <div className="w-full flex items-center justify-between">
             <span className="font-raleway font-light text-[#A8A8A8]">
-              29 of november 2023
+              29 of November 2023
             </span>
             <span className="text-2xl font-raleway font-light">
               10.00

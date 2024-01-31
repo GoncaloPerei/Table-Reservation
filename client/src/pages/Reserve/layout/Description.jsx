@@ -1,8 +1,8 @@
-import { Heading } from "../.";
+import { Heading } from "../components";
 
 const Description = () => {
   return (
-    <div className="w-full uppercase">
+    <div className="w-full">
       <Heading first="restaurant" second="description" />
       <span className="text-xl font-raleway font-light leading-relaxed tracking-wider">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ipsum mi,

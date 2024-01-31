@@ -3,27 +3,28 @@ import {
   RestaurantImages,
   RestaurantInfoHeader,
   RestaurantInfoLinks,
-  RestaurantNavbar,
   RestaurantDescription,
   RestaurantMenu,
-  Line,
   RestaurantRatings,
+  RestaurantFooter,
 } from ".";
+
+import { Line } from "./components";
 
 function Reserve() {
   return (
-    <div className="w-full h-fit flex flex-col py-29 gap-12">
+    <div className="w-full h-fit flex flex-col py-28 gap-12">
       <RestaurantImages />
       <div className="h-fit flex flex-col gap-10 mx-48">
         <RestaurantInfoHeader />
         <RestaurantInfoLinks />
-        <RestaurantNavbar />
         <RestaurantDescription />
         <Line />
         <RestaurantMenu />
         <Line />
         <RestaurantRatings />
         <Line />
+        <RestaurantFooter />
       </div>
     </div>
   );
