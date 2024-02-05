@@ -28,7 +28,7 @@ const Home = () => {
           </span>
         </span>
         <div className="flex flex-col items-center gap-7">
-          <img src={"./table.svg"} alt="" />
+          <img src={"./assets/table.svg"} alt="" />
           <Button1 href="/book" name="book now" />
         </div>
       </div>
@@ -42,7 +42,7 @@ const Home = () => {
         </span>
         <div className="flex justify-between">
           <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center justify-center hover:shadow-xl transition-all duration-500">
-            <img className="w-20" src={"./handshake.svg"} alt="" />
+            <img className="w-20" src={"./assets/handshake.svg"} alt="" />
             <div>
               <h1 className="font-montserrat font-bold uppercase text-3xl text-[#75B09C] leading-relaxed mb-1.5">
                 simplicity
@@ -53,7 +53,7 @@ const Home = () => {
             </div>
           </div>
           <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center hover:shadow-xl transition-all duration-500">
-            <img className="w-20" src={"./arrange.svg"} alt="" />
+            <img className="w-20" src={"./assets/arrange.svg"} alt="" />
             <div>
               <h1 className="font-montserrat font-bold uppercase text-3xl text-[#75B09C] leading-relaxed mb-1.5">
                 arranje
@@ -64,7 +64,7 @@ const Home = () => {
             </div>
           </div>
           <div className="w-96 flex flex-col px-12 py-14 border border-solid border-black/10 rounded-xl items-center gap-7 text-center hover:shadow-xl transition-all duration-500">
-            <img className="w-20" src={"./time.svg"} alt="" />
+            <img className="w-20" src={"./assets/time.svg"} alt="" />
             <div>
               <h1 className="font-montserrat font-bold uppercase text-3xl text-[#75B09C] leading-relaxed mb-1.5">
                 waiting

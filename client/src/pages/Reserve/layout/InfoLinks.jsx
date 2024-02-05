@@ -19,7 +19,7 @@ const InfoLinks = () => {
         </div>
         <div className="w-max flex gap-2.5 items-center">
           <div className="w-fit h-fit p-2.5 border border-solid border-[#998650] rounded-xl">
-            <img src="./spoon.svg" className="w-6" alt="" />
+            <img src="./assets/spoon.svg" className="w-6" alt="" />
           </div>
           <span className="text-lg font-raleway leading-loose tracking-wider">
             portuguesa
