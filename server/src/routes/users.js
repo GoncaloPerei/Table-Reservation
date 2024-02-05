@@ -1,12 +1,15 @@
-const express = require("express");
+const express = require ("express");
 const router = express.Router();
-const userController = require("../controllers/userController");
+const { Users } = require("../models");
 
-router
-  .route("/")
-  .get(userController.customer.getAllUsers)
-  .post((req, res) => {})
-  .put((req, res) => {})
-  .delete((req, res) => {});
+router.get("/", (req, res) => {
+    res.json("Hello World");
+});
+
+router.post("/", async(req, res) => {
+    const user = req.body;
+    await Users.create(user);
+    res.json(user);
+});
 
 module.exports = router;
