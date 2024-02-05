@@ -9,11 +9,9 @@ app.use(cors(corsOptions));
 
 const db = require("./src/models");
 
-const userRouter = require("./src/routes/users");
-app.use("/users", userRouter);
+app.use("/users", require("./src/routes/users"));
+app.use("/reservations", require("./src/routes/reservations"));
 
 db.sequelize.sync().then(() => {
-  app.listen(5173, () => {
-    console.log("Server running on port 5173");
-  });
+  app.listen(3002, () => console.log("server started on port 3002"));
 });
