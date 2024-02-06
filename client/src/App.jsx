@@ -4,7 +4,7 @@ import { Header, Footer } from "./layout";
 const HomePage = React.lazy(() => import("./pages/Home/Home"));
 const ReservePage = React.lazy(() => import("./pages/Reserve/Reserve"));
 const AboutPage = React.lazy(() => import("./pages/About"));
-const ContactPage = React.lazy(() => import("./pages/Contact"));
+const ContactPage = React.lazy(() => import("./pages/Contact/Contact"));
 import { Routes, Route } from "react-router-dom";
 
 function App() {
