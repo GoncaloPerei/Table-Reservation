@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col text-3xl leading-loose tracking-wider font-raleway">
           <a href="/home">Home</a>
           <a href="/about">About TR - Table reservation</a>
-          <a href="/book">Book a table</a>
+          <a href="/reserve">Reserve a table</a>
           <a href="/contact">Talk with us</a>
         </div>
         <div className="flex flex-col gap-3 font-montserrat font-bold">
