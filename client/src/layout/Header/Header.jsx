@@ -1,41 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useState, useEffect, useRef } from "react";
+import useNav from "./hooks/UseNav.hook";
+import Navbar from "./components/Navbar";
 
-import {
-  Hourglass,
-  QuestionCircle,
-  Facebook,
-  Instagram,
-  PersonFill,
-} from "react-bootstrap-icons";
+import { Hourglass, PersonFill } from "react-bootstrap-icons";
 
 const Header = () => {
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
-
-  const [nav, setNav] = useState(false);
-
-  const handleNav = () => {
-    setNav(!nav);
-  };
-
-  let menuRef = useRef();
-
-  try {
-    useEffect(() => {
-      const handleOutsideClick = (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target)) {
-          setNav(false);
-        }
-      };
-      document.addEventListener("mousedown", handleOutsideClick);
-
-      return () => {
-        document.removeEventListener("mousedown", handleOutsideClick);
-      };
-    });
-  } catch (e) {
-    console.log(e);
-  }
+  const { nav, handleNav, menuRef } = useNav();
 
   return (
     <>
@@ -82,29 +53,7 @@ const Header = () => {
             nav ? "left-20%" : "left-[-20%]"
           }`}
         >
-          <img src={"./tr.svg"} alt="" className="w-10" />
-          <div className=" flex flex-col gap-8 tracking-wider">
-            <a href="/home" className="relative flex justify-center">
-              <span className="text-3xl">home</span>
-            </a>
-            <a href="/about" className="relative flex justify-center">
-              <span className="text-3xl">about us</span>
-            </a>
-            <a href="/reserve" className="relative flex justify-center">
-              <span className="text-3xl">reserve</span>
-            </a>
-            <a href="/contact" className="relative flex justify-center">
-              <span className="text-3xl">contact</span>
-            </a>
-          </div>
-          <div className="relative flex gap-12">
-            <a href="#">
-              <Facebook className="text-3xl" />
-            </a>
-            <a href="#">
-              <Instagram className="text-3xl" />
-            </a>
-          </div>
+          <Navbar />
         </div>
       </div>
     </>
