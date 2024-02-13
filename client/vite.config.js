@@ -5,9 +5,11 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     proxy: {
-      "/users": "http://localhost:3002",
-      "/reservations": "http://localhost:3002",
+      "/api": "http://localhost:3002",
     },
   },
   plugins: [react()],
+  optimizeDeps: {
+    exclude: ["js-big-decimal"],
+  },
 });
