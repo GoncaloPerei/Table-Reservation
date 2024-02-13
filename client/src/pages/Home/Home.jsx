@@ -1,10 +1,12 @@
 import { ContactForm, UsersCount } from "./layout";
 import { CircularBTN } from "./components";
 import { Button1 } from "../../components";
+import { Header, Footer } from "../../layout";
 
 const Home = () => {
   return (
     <>
+      <Header />
       <div className="w-full h-screen bg-[#FBF751] flex flex-col items-center justify-center uppercase gap-16 tracking-wider">
         <span className="font-raleway text-center font-thin text-5xl">
           Yes, a table
@@ -104,6 +106,7 @@ const Home = () => {
         <CircularBTN />
       </div>
       <ContactForm />
+      <Footer />
     </>
   );
 };
