@@ -1,9 +1,29 @@
 import React from "react";
 import "./App.css";
-const HomePage = React.lazy(() => import("./pages/Home/Home"));
-const ReservePage = React.lazy(() => import("./pages/Reserve/Reserve"));
-const AboutPage = React.lazy(() => import("./pages/About"));
-const ContactPage = React.lazy(() => import("./pages/Contact/Contact"));
+const HomePage = React.lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./pages/Home/Home")), 2000)
+    )
+);
+const ReservePage = React.lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./pages/Reserve/Reserve")), 2000)
+    )
+);
+const AboutPage = React.lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./pages/About/About")), 2000)
+    )
+);
+const ContactPage = React.lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./pages/Contact/Contact")), 2000)
+    )
+);
 import { Routes, Route } from "react-router-dom";
 import { Loading } from "./components/index";
 function App() {
