@@ -24,6 +24,18 @@ const ContactPage = React.lazy(
       setTimeout(() => resolve(import("./pages/Contact/Contact")), 2000)
     )
 );
+const LoginPage = React.lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./pages/Auth/Login/Login")), 2000)
+    )
+);
+const RegisterPage = React.lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./pages/Auth/Register/Register")), 2000)
+    )
+);
 import { Routes, Route } from "react-router-dom";
 import { Loading } from "./components/index";
 function App() {
@@ -42,6 +54,8 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/reserve" element={<ReservePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </React.Suspense>
     </>

@@ -1,11 +1,9 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import useNav from "./hooks/UseNav.hook";
 import Navbar from "./components/Navbar";
 
 import { Hourglass, PersonFill } from "react-bootstrap-icons";
 
 const Header = () => {
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   const { nav, handleNav, menuRef } = useNav();
 
   return (
@@ -22,7 +20,7 @@ const Header = () => {
           />
           <img src={"./tr.svg"} alt="" />
         </div>
-        {(() => {
+        {/* {(() => {
           if (isAuthenticated) {
             return (
               <button
@@ -37,17 +35,26 @@ const Header = () => {
             );
           }
           return (
-            <button
-              onClick={loginWithRedirect}
+            <a
+              href="/signin"
               className="w-fit h-fit rounded-xl border border-black border-solid px-9 py-4 cursor-pointer flex gap-3 items-center"
             >
               <PersonFill className="text-3xl" />
               <span className="font-montserrat font-bold uppercase text-xl tracking-wider">
-                Login
+                sign in
               </span>
-            </button>
+            </a>
           );
-        })()}
+        })()} */}
+        <a
+          href="/login"
+          className="w-fit h-fit rounded-xl border border-black border-solid px-9 py-4 cursor-pointer flex gap-3 items-center"
+        >
+          <PersonFill className="text-3xl" />
+          <span className="font-montserrat font-bold uppercase text-xl tracking-wider">
+            login
+          </span>
+        </a>
         <div
           className={`absolute top-0 left-0 z-[100] bg-[#FBF751] flex flex-col items-center justify-between gap-8 w-[20%] h-screen font-raleway uppercase py-12 border-r border-black transition-all duration-500 ${
             nav ? "left-20%" : "left-[-20%]"

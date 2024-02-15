@@ -1,1 +1,1 @@
-export { default as ContactForm } from "./contactContactForm";
+export { default as Heading } from "./Heading/Heading.layout";

@@ -1,4 +1,4 @@
-import useUsersCount from "../hooks/UsersCount.hook";
+import useUsersCount from "../../hooks/UsersCount.hook";
 
 const UsersCount = () => {
   const { usersCount, reservationsCount } = useUsersCount();

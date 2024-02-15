@@ -1,2 +1,2 @@
-export { default as ContactForm } from "./homeContactForm";
-export { default as UsersCount } from "./homeUsersCount";
+export { default as ContactForm } from "../components/ContactForm/ContactForm.component";
+export { default as UsersCount } from "../components/UsersCount/UsersCount";

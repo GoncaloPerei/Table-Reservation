@@ -1,5 +1,5 @@
-import { Heading } from "./components";
-import { ContactForm } from "./layout";
+import { Heading } from "./layout";
+import { ContactForm } from "./components";
 import { Header, Footer } from "../../layout";
 
 function Contact() {

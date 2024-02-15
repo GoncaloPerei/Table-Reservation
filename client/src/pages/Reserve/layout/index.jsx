@@ -5,3 +5,4 @@ export { default as RestaurantDescription } from "./Description";
 export { default as RestaurantMenu } from "./Menu";
 export { default as RestaurantRatings } from "./Ratings";
 export { default as RestaurantFooter } from "./Footer";
+export { default as Heading } from "./Heading/Heading";

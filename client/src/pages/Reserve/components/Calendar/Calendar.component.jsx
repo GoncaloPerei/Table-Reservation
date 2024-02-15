@@ -6,7 +6,6 @@ import {
   format,
   getDay,
   isEqual,
-  isSameMonth,
   isToday,
   parse,
   startOfToday,
