@@ -5,9 +5,11 @@ const Description = () => {
     <div className="w-full">
       <Heading first="restaurant" second="description" />
       <span className="text-xl font-raleway font-light leading-relaxed tracking-wider">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ipsum mi,
-        tempus in tellus ac, ultrices aliquet urna. Nullam ac nibh orci. Proin
-        imperdiet convallis dui eget scelerisque. Aenean in.
+        O menu deste restaurante é recomendado para os amantes da culinária.
+        Muitos convidados supõem do tamboril aqui é bom. Churrascaria Chão Verde
+        é recomendado por causa da funcionários cortêses. O serviço é sempre
+        profissional. Tem uma atmosfera quieta neste restaurante, segundo os
+        visitantes.
       </span>
     </div>
   );
