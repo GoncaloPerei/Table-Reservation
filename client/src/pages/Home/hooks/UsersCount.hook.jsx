@@ -8,7 +8,7 @@ function useUsersCount() {
 
   const fetchContent = async () => {
     try {
-      const usersResponse = await axiosInstance.get("/api/users/customer");
+      const usersResponse = await axiosInstance.get("/api/users");
       const reservationsResponse = await axiosInstance.get("/api/reservations");
 
       setUsersCount(usersResponse.data.length);
