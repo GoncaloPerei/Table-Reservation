@@ -1,7 +1,7 @@
-import { Heading } from "../components";
-import useMealFetcher from "../hooks/useMealFetcher.hook";
-import { MenuItem } from "../components";
-import useVisibleState from "../../../hooks/useVisibleState.hook";
+import { Heading } from "../../components";
+import useMealFetcher from "../../hooks/useMealFetcher.hook";
+import { MenuItem } from "../../components";
+import useVisibleState from "../../../../hooks/useVisibleState.hook";
 
 const Menu = () => {
   const { meals } = useMealFetcher();

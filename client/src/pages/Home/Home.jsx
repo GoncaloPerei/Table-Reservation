@@ -1,5 +1,4 @@
-import { ContactForm, UsersCount } from "./layout";
-import { CircularBTN } from "./components";
+import { ContactForm, UsersCount, CircularText } from "./components";
 import { Button1 } from "../../components";
 import { Header, Footer } from "../../layout";
 
@@ -103,7 +102,7 @@ const Home = () => {
             you, won’t be disapointed
           </span>
         </span>
-        <CircularBTN />
+        <CircularText />
       </div>
       <ContactForm />
       <Footer />

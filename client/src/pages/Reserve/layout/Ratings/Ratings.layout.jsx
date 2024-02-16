@@ -1,4 +1,4 @@
-import { Heading, Rating } from "../components";
+import { Heading, Rating } from "../../components";
 
 const Ratings = () => {
   return (
