@@ -2,7 +2,7 @@ import { Heading, ShowAllBTN } from "../../components";
 import useMealFetcher from "../../hooks/useMealFetcher.hook";
 import { MenuItem } from "../../components";
 import useVisibleState from "../../../../hooks/useVisibleState.hook";
-import ShowLessBTN from "../../components/Button/ShowLess.component";
+import ShowLessBTN from "../../components/Buttons/ShowLess.component";
 
 const Menu = () => {
   const { meals } = useMealFetcher();

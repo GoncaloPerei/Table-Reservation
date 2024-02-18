@@ -1,5 +1,5 @@
 import useNav from "./hooks/UseNav.hook";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.component";
 
 import { Hourglass, PersonFill } from "react-bootstrap-icons";
 

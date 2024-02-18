@@ -22,7 +22,7 @@ const InfoLinks = () => {
             <img src="./assets/spoon.svg" className="w-6" alt="" />
           </div>
           <span className="text-lg font-raleway leading-loose tracking-wider">
-            portuguesa
+            portuguese
           </span>
         </div>
         <div className="w-max flex gap-2.5 items-center">
