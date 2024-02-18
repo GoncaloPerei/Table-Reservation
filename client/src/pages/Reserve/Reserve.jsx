@@ -8,7 +8,7 @@ import {
   RestaurantFooter,
 } from "./layout";
 
-import { Line } from "./components";
+import { Line } from "../../components";
 
 import { Header, Footer } from "../../layout";
 

@@ -10,7 +10,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DOUBLE,
       allowNull: false,
     },
+    rating_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
   });
+
+  Ratings.associate = (models) => {
+    Ratings.belongsTo(models.Users, { foreignKey: "UserId" });
+  };
 
   return Ratings;
 };

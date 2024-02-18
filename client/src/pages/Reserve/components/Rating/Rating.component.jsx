@@ -1,10 +1,8 @@
-import {
-  PersonFill,
-  HandThumbsUp,
-  HandThumbsDown,
-} from "react-bootstrap-icons";
+import { PersonFill } from "react-bootstrap-icons";
+import PropTypes from "prop-types";
 
-const RatingComponent = () => {
+const RatingComponent = ({ rating }) => {
+  const formattedScore = rating.rating_score.toFixed(2);
   return (
     <div className="w-full flex flex-col gap-5">
       <div className="w-full flex gap-5 items-center">
@@ -12,42 +10,50 @@ const RatingComponent = () => {
           <PersonFill className="text-2xl" />
         </div>
         <div className="w-full tracking-wider leading-relaxed">
-          <div className="flex gap-2.5">
-            <span className="font-montserrat font-bold">Lorem</span>
-            <span className="font-raleway font-light text-[#A8A8A8]">
-              1 rating
+          <div className="flex divide-x divide-solid divide-black/20">
+            <span className="font-montserrat font-bold pr-2.5">
+              {rating.User.user_first_name} {rating.User.user_last_name}
+            </span>
+            <span className="font-raleway font-light text-[#A8A8A8] pl-2.5">
+              {rating.countOfRatings}&nbsp;
+              {rating.countOfRatings < 2 ? (
+                <span>Rating</span>
+              ) : (
+                <span>Ratings</span>
+              )}
             </span>
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="font-raleway font-light text-[#A8A8A8]">
-              29 of November 2023
+            <span className="text-lg font-raleway font-light text-[#A8A8A8]">
+              {rating.rating_date}
             </span>
             <span className="text-2xl font-raleway font-light">
-              10.00
-              <span className="text-xl">/10.0</span>
+              {formattedScore}
+              <span className="text-xl">/10.00</span>
             </span>
           </div>
         </div>
       </div>
       <div>
         <span className="text-lg font-raleway font-light tracking-wider leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ipsum
-          mi, tempus in tellus ac, ultrices aliquet urna. Nullam ac nibh orci.
-          Proin imperdiet convallis dui eget scelerisque. Aenean in.
+          {rating.rating_comment}
         </span>
-      </div>
-      <div className="flex gap-5 uppercase tracking-wider leading-relaxed">
-        <div className="flex items-center gap-2.5">
-          <HandThumbsUp className="text-xl text-[#75B09C]" />
-          <span className="text-[#75B09C]">like</span>
-        </div>
-        <div className="flex items-center gap-2.5">
-          <HandThumbsDown className="text-xl text-[#75B09C]" />
-          <span className="text-[#75B09C]">not like</span>
-        </div>
       </div>
     </div>
   );
+};
+
+RatingComponent.propTypes = {
+  rating: PropTypes.shape({
+    rating_comment: PropTypes.string.isRequired,
+    rating_score: PropTypes.number.isRequired,
+    rating_date: PropTypes.instanceOf(Date).isRequired,
+    User: PropTypes.shape({
+      user_first_name: PropTypes.string.isRequired,
+      user_last_name: PropTypes.string.isRequired,
+    }),
+    countOfRatings: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default RatingComponent;
