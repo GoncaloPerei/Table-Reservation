@@ -2,14 +2,13 @@ import { Heading } from "../../components";
 
 const Description = () => {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-7">
       <Heading first="restaurant" second="description" />
       <span className="text-xl font-raleway font-light leading-relaxed tracking-wider">
-        O menu deste restaurante é recomendado para os amantes da culinária.
-        Muitos convidados supõem do tamboril aqui é bom. Churrascaria Chão Verde
-        é recomendado por causa da funcionários cortêses. O serviço é sempre
-        profissional. Tem uma atmosfera quieta neste restaurante, segundo os
-        visitantes.
+        The menu at this restaurant is recommended for culinary lovers.
+        Churrascaria Chão Verde is advised because of the courteous staff. The
+        service is always professional. It has a quiet atmosphere, according to
+        visitors.
       </span>
     </div>
   );
