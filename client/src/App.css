@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-bg: #242526;
+  --secondary-bg: #fff;
+  --primary-text-color: #555;
+  --secondary-text-color: #cecece;
+  --border-radius: 8px;
+  --speed: 500ms;
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -14,4 +23,63 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100px;
+  right: 81px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: var(--border-radius);
+  padding: 35px 25px;
+  width: fit-content;
+  min-width: 200px;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background: #ffffff;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  transform: rotate(45deg);
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu ul li {
+  padding: 15px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu ul li:hover a {
+  color: rgb(212, 33, 9);
+  cursor: pointer;
+}
+
+.dropdown-menu ul li:hover img {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.dropdownItem {
+  display: flex;
+  margin: 10px auto;
 }

@@ -1,10 +1,16 @@
 import useNav from "./hooks/UseNav.hook";
-import Navbar from "./components/Navbar.component";
+import { Navbar, LoginBTN } from "./components";
+import { Dropdown } from "./layout";
 
-import { Hourglass, PersonFill } from "react-bootstrap-icons";
+import { useContext } from "react";
+import { AuthContext } from "../../context/Auth.context";
+
+import { Hourglass } from "react-bootstrap-icons";
 
 const Header = () => {
   const { nav, handleNav, menuRef } = useNav();
+
+  const { authState } = useContext(AuthContext);
 
   return (
     <>
@@ -20,41 +26,7 @@ const Header = () => {
           />
           <img src={"./tr.svg"} alt="" />
         </div>
-        {/* {(() => {
-          if (isAuthenticated) {
-            return (
-              <button
-                onClick={logout}
-                className="w-fit h-fit rounded-xl border border-black border-solid px-9 py-4 cursor-pointer flex gap-3 items-center"
-              >
-                <PersonFill className="text-3xl" />
-                <span className="font-montserrat font-bold uppercase text-xl tracking-wider">
-                  Logout
-                </span>
-              </button>
-            );
-          }
-          return (
-            <a
-              href="/signin"
-              className="w-fit h-fit rounded-xl border border-black border-solid px-9 py-4 cursor-pointer flex gap-3 items-center"
-            >
-              <PersonFill className="text-3xl" />
-              <span className="font-montserrat font-bold uppercase text-xl tracking-wider">
-                sign in
-              </span>
-            </a>
-          );
-        })()} */}
-        <a
-          href="/login"
-          className="w-fit h-fit rounded-xl border border-black border-solid px-9 py-4 cursor-pointer flex gap-3 items-center"
-        >
-          <PersonFill className="text-3xl" />
-          <span className="font-montserrat font-bold uppercase text-xl tracking-wider">
-            login
-          </span>
-        </a>
+        {authState ? <Dropdown /> : <LoginBTN />}
         <div
           className={`absolute top-0 left-0 z-[100] bg-[#FBF751] flex flex-col items-center justify-between gap-8 w-[20%] h-screen font-raleway uppercase py-12 border-r border-black transition-all duration-500 ${
             nav ? "left-20%" : "left-[-20%]"
