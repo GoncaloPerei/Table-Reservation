@@ -1,11 +1,15 @@
 import { useState } from "react";
 import axiosInstance from "../../../../../axios";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../../../context/Auth.context";
 
 function LoginForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const { setAuthState } = useContext(AuthContext);
 
   const fetchContent = async () => {
     try {
@@ -17,6 +21,7 @@ function LoginForm() {
         alert(response.data.err);
       } else {
         localStorage.setItem("accessToken", response.data);
+        setAuthState(true);
         navigate(-1);
       }
     } catch (error) {

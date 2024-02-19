@@ -38,7 +38,12 @@ const RegisterPage = React.lazy(
 );
 import { Routes, Route } from "react-router-dom";
 import { Loading } from "./components/index";
+import { AuthContext } from "./context/Auth.context";
+import useAuthState from "./hooks/useAuthState.hook";
+
 function App() {
+  const { authState, setAuthState } = useAuthState();
+
   return (
     <>
       <React.Suspense
@@ -48,15 +53,17 @@ function App() {
           </>
         }
       >
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/reserve" element={<ReservePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
+        <AuthContext.Provider value={{ authState, setAuthState }}>
+          <Routes>
+            <Route index element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/reserve" element={<ReservePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </AuthContext.Provider>
       </React.Suspense>
     </>
   );
