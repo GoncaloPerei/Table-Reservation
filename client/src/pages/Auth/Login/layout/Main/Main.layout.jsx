@@ -5,8 +5,8 @@ const Main = () => {
     <>
       <LoginForm />
       <span className="text-lg font-raleway font-light">
-        Don&apos;t have an account?
-        <a href="" className="text-[#0000FF] underline">
+        Don&apos;t have an account?&nbsp;
+        <a href="/register" className="text-[#0000FF] underline">
           sign up
         </a>
       </span>

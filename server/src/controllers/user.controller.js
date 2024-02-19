@@ -1,6 +1,7 @@
 const { Users } = require("../models");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
+const { sign } = require("jsonwebtoken");
 
 class User {
   constructor(id, firstname, lastname, email, password, administrador) {
@@ -44,31 +45,34 @@ class User {
   }
 
   static async loginUser(req, res) {
+    const { user_email, user_password } = req.body;
     try {
       const user = await Users.findOne({
-        where: { user_email: req.body.user_email },
+        where: { user_email: user_email },
       });
       if (!user) {
-        return res.status(400).json({ message: "User not found" });
+        return res.status(400).json({ error: "User not found" });
       }
 
       const isPasswordValid = await bcrypt.compare(
-        req.body.user_password,
+        user_password,
         user.user_password
       );
 
       if (!isPasswordValid) {
-        return res.status(400).json({ message: "Invalid email or password" });
+        return res.status(400).json({ error: "Invalid email or password" });
       }
-      const accessToken = sign(
+
+      const accessToken = await sign(
         { user_email: user.user_email, id: user.id },
         process.env.SECRET
       );
-      res.json({ message: "user authenticated" });
-    } catch (err) {
-      res.status(400).json({
+
+      return res.json(accessToken);
+    } catch (error) {
+      return res.status(400).json({
         message: "an internal error occured",
-        err,
+        error,
       });
     }
   }
