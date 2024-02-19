@@ -8,7 +8,6 @@ function useRatingFetcher() {
   const fetchContent = async () => {
     try {
       const ratingsResponse = await axiosInstance.get("/api/ratings");
-      console.log(ratingsResponse.data);
       setRatings(ratingsResponse.data);
       setLoading(false);
     } catch (error) {

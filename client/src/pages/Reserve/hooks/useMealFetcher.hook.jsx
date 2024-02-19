@@ -8,7 +8,6 @@ function useMealFetcher() {
   const fetchContent = async () => {
     try {
       const mealsResponse = await axiosInstance.get("/api/meals");
-      console.log(mealsResponse.data);
       setMeals(mealsResponse.data);
       setLoading(false);
     } catch (error) {
