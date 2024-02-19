@@ -17,9 +17,9 @@ const Ratings = () => {
       </div>
       {visible < ratings.length ? (
         <ShowAllBTN onClick={showMoreItems} />
-      ) : (
+      ) : ratings.length > 3 ? (
         <ShowLessBTN onClick={showLessItems} />
-      )}
+      ) : null}
     </div>
   );
 };
