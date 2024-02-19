@@ -47,7 +47,7 @@ const Calendar = () => {
   ];
 
   return (
-    <div className="mx-auto md:max-w-4xl">
+    <div className="w-auto mx-auto md:max-w-4xl">
       <div className="flex justify-between items-center border-y border-solid border-black/20 px-6 py-5">
         <button
           type="button"

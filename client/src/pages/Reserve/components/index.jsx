@@ -5,3 +5,4 @@ export { default as MenuItem } from "./Meal/Meal.component";
 export { default as Heading } from "./Heading/Heading.component";
 export { default as ShowAllBTN } from "./Buttons/ShowAll.component";
 export { default as ShowLessBTN } from "./Buttons/ShowLess.component";
+export { default as Map } from "./Map/Map.component";
