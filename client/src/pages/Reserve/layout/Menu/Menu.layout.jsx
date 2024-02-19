@@ -22,9 +22,9 @@ const Menu = () => {
       </ul>
       {visible < meals.length ? (
         <ShowAllBTN onClick={showMoreItems} />
-      ) : (
+      ) : meals.length > 3 ? (
         <ShowLessBTN onClick={showLessItems} />
-      )}
+      ) : null}
     </div>
   );
 };
