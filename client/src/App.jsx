@@ -3,37 +3,37 @@ import "./App.css";
 const HomePage = React.lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./pages/Home/Home")), 2000)
+      setTimeout(() => resolve(import("./pages/Home/Home")), 1500)
     )
 );
 const ReservePage = React.lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./pages/Reserve/Reserve")), 2000)
+      setTimeout(() => resolve(import("./pages/Reserve/Reserve")), 1500)
     )
 );
 const AboutPage = React.lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./pages/About/About")), 2000)
+      setTimeout(() => resolve(import("./pages/About/About")), 1500)
     )
 );
 const ContactPage = React.lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./pages/Contact/Contact")), 2000)
+      setTimeout(() => resolve(import("./pages/Contact/Contact")), 1500)
     )
 );
 const LoginPage = React.lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./pages/Auth/Login/Login")), 2000)
+      setTimeout(() => resolve(import("./pages/Auth/Login/Login")), 1500)
     )
 );
 const RegisterPage = React.lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./pages/Auth/Register/Register")), 2000)
+      setTimeout(() => resolve(import("./pages/Auth/Register/Register")), 1500)
     )
 );
 import { Routes, Route } from "react-router-dom";
