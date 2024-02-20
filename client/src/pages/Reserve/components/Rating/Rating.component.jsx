@@ -47,7 +47,7 @@ RatingComponent.propTypes = {
   rating: PropTypes.shape({
     rating_comment: PropTypes.string.isRequired,
     rating_score: PropTypes.number.isRequired,
-    rating_date: PropTypes.instanceOf(Date).isRequired,
+    rating_date: PropTypes.string.isRequired,
     User: PropTypes.shape({
       user_first_name: PropTypes.string.isRequired,
       user_last_name: PropTypes.string.isRequired,

@@ -42,9 +42,9 @@ const Schedule = () => {
         })()}
       </ul>
       <ul className="w-max h-fit">
-        {category.map((type) => (
+        {category.map((type, index) => (
           <li
-            key={type}
+            key={index}
             className="text-lg font-raleway leading-loose tracking-wider"
           >
             {type}

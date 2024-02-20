@@ -20,8 +20,8 @@ const Ratings = () => {
       <Publish />
       <Line />
       <div className="w-full flex flex-col gap-10">
-        {ratings.slice(0, visible).map((rating) => (
-          <Rating key={rating} rating={rating} />
+        {ratings.slice(0, visible).map((rating, index) => (
+          <Rating key={index} rating={rating} />
         ))}
       </div>
       {visible < ratings.length ? (
