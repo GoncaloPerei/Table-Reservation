@@ -56,6 +56,20 @@ class Rating {
       res.status(500).json({ message: "Failed to create rating", error: err });
     }
   }
+
+  static async sumScore(req, res) {
+    try {
+      const totalScore = await Ratings.sum("rating_score");
+      const totalRatings = await Ratings.count();
+
+      const averageScore = totalRatings > 0 ? totalScore / totalRatings : 0;
+      res.status(200).json({ averageScore });
+    } catch (err) {
+      res
+        .status(500)
+        .json({ message: "Failed to sum scores", error: err.message });
+    }
+  }
 }
 
 module.exports = {

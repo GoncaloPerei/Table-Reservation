@@ -7,4 +7,6 @@ router
   .get(ratingController.Rating.getAll)
   .post(validateToken, ratingController.Rating.create);
 
+router.route("/sum").get(ratingController.Rating.sumScore);
+
 module.exports = router;
