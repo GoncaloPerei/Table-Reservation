@@ -1,8 +1,8 @@
 import { PersonFill, BoxArrowRight, PersonCircle } from "react-bootstrap-icons";
 import { useState, useEffect, useRef } from "react";
-import { DropdownItem } from "../../components";
+import PropTypes from "prop-types";
 
-const DropdownMenu = () => {
+const DropdownMenu = (props) => {
   const [open, setOpen] = useState(false);
 
   let menuRef = useRef();
@@ -21,6 +21,7 @@ const DropdownMenu = () => {
       document.removeEventListener("mousedown", handler);
     };
   });
+
   return (
     <div className="menu-container" ref={menuRef}>
       <div
@@ -42,17 +43,24 @@ const DropdownMenu = () => {
           <span className="text-normal font-raleway font-light">Customer</span>
         </span>
         <ul>
-          <DropdownItem
-            text="My Profile"
-            icon={<PersonCircle className="text-lg" />}
-          />
-          <DropdownItem
-            text="Logout"
-            icon={<BoxArrowRight className="text-lg" />}
-          />
+          <a href="">
+            <li className="flex gap-5 items-center font-raleway font-light">
+              <PersonCircle /> My Profile
+            </li>
+          </a>
+          <button onClick={props.onClick} className="w-full">
+            <li className="flex gap-5 items-center font-raleway font-light">
+              <BoxArrowRight /> Logout
+            </li>
+          </button>
         </ul>
       </div>
     </div>
   );
 };
+
+DropdownMenu.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
 export default DropdownMenu;

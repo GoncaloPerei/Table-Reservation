@@ -10,7 +10,17 @@ import { Hourglass } from "react-bootstrap-icons";
 const Header = () => {
   const { nav, handleNav, menuRef } = useNav();
 
-  const { authState } = useContext(AuthContext);
+  const { authState, setAuthState } = useContext(AuthContext);
+
+  const logout = () => {
+    try {
+      localStorage.removeItem("accessToken");
+      setAuthState(false);
+      alert("Logged Out!!!");
+    } catch (e) {
+      alert(e);
+    }
+  };
 
   return (
     <>
@@ -24,9 +34,11 @@ const Header = () => {
             onClick={handleNav}
             className="text-3xl cursor-pointer"
           />
-          <img src={"./tr.svg"} alt="" />
+          <a href="/home" className="cursor-pointer">
+            <img src={"./tr.svg"} alt="" />
+          </a>
         </div>
-        {authState ? <Dropdown /> : <LoginBTN />}
+        {authState ? <Dropdown onClick={logout} /> : <LoginBTN />}
         <div
           className={`absolute top-0 left-0 z-[100] bg-[#FBF751] flex flex-col items-center justify-between gap-8 w-[20%] h-screen font-raleway uppercase py-12 border-r border-black transition-all duration-500 ${
             nav ? "left-20%" : "left-[-20%]"

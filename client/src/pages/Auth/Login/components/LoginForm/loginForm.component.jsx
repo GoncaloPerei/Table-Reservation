@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../../context/Auth.context";
 
 function LoginForm() {
-  const navigate = useNavigate();
+  let navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -22,6 +22,7 @@ function LoginForm() {
       } else {
         localStorage.setItem("accessToken", response.data);
         setAuthState(true);
+        alert("Logged In!");
         navigate(-1);
       }
     } catch (error) {
