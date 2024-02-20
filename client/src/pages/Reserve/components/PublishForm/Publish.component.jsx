@@ -16,7 +16,7 @@ const Publish = () => {
         },
         {
           headers: {
-            accessToken: localStorage.getItem("accessToken"),
+            Authorization: localStorage.getItem("accessToken"),
           },
         }
       )

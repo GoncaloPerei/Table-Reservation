@@ -1,15 +1,17 @@
 const { verify } = require("jsonwebtoken");
 require("dotenv").config();
 
-const validateToken = (req, res, next) => {
-  const accessToken = req.header("accessToken");
+const validateToken = async (req, res, next) => {
+  const bearerToken = req.header("Authorization");
 
-  if (!accessToken) {
+  if (!bearerToken) {
     return res.status(401).json({ message: "Missing token" });
   }
 
+  const token = bearerToken.split(" ")[1];
+
   try {
-    const validToken = verify(accessToken, process.env.SECRET);
+    const validToken = await verify(token, process.env.SECRET);
     req.user = validToken;
 
     if (validToken) {

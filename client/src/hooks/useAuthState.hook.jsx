@@ -7,7 +7,7 @@ function useAuthState() {
     axiosInstance
       .get("/api/users/auth", {
         headers: {
-          accessToken: localStorage.getItem("accessToken"),
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
       .then((response) => {
