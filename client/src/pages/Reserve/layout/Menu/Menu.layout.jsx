@@ -16,7 +16,7 @@ const Menu = () => {
       <ul
         className={`w-full max-h-96 transition-all no-scrollbar overflow-y-scroll transition-all ease-in duration-700 tracking-wider leading-relaxed flex flex-col gap-2.5`}
       >
-        {meals.length < 0 ? (
+        {meals.length > 0 ? (
           meals
             .slice(0, visible)
             .map((meal, index) => <MenuItem key={index} meal={meal} />)
