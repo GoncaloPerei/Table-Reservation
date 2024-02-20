@@ -55,7 +55,7 @@ const Publish = () => {
       <input
         type="submit"
         value="publish"
-        className="w-fit px-6 py-5 border border-solid border-[#998650] text-[#998650] rounded-xl uppercase font-raleway font-light cursor-pointer"
+        className="w-fit px-6 py-5 border border-solid border-[#998650] text-[#998650] rounded-xl uppercase font-raleway font-light cursor-pointer transition ease-in duration-200 hover:bg-[#998650] hover:text-white"
       />
     </form>
   );

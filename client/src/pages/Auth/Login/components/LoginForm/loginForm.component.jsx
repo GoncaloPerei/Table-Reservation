@@ -3,7 +3,6 @@ import axiosInstance from "../../../../../axios";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../../../context/Auth.context";
-import { TextField } from "@mui/material";
 
 function LoginForm() {
   let navigate = useNavigate();
@@ -13,7 +12,6 @@ function LoginForm() {
   const { setAuthState } = useContext(AuthContext);
 
   const fetchContent = () => {
-    console.log(email, password);
     axiosInstance
       .post("/api/users/login", {
         user_email: email,
@@ -42,31 +40,39 @@ function LoginForm() {
   return (
     <form action="" className="flex flex-col gap-12" onSubmit={handleSubmit}>
       <div className="w-full flex flex-col gap-6">
-        <TextField
-          id="outlined-basic"
-          label="Email"
-          variant="outlined"
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          required={true}
-        />
-        <TextField
-          variant="outlined"
-          type="password"
-          label="Password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          required={true}
-          fullWidth
-        />
+        <label
+          htmlFor=""
+          className="block font-raleway font-light text-lg w-full"
+        >
+          email
+          <input
+            type="email"
+            placeholder="example@gmail.com"
+            className="block mt-1.5 text-normal border-b border-solid border-black/20 w-full outline-none py-4"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+        </label>
+        <label
+          htmlFor=""
+          className="block font-raleway font-light text-lg w-full"
+        >
+          password
+          <input
+            type="password"
+            placeholder="example123_"
+            className="block mt-1.5 text-normal border-b border-solid border-black/20 w-full outline-none py-4"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+        </label>
       </div>
       <input
         type="submit"
         value="Sign In"
-        className="w-full text-center text-normal font-montserrat font-bold uppercase bg-[#75B09C] text-white py-3.5 rounded-xl cursor-pointer"
+        className="w-full text-center text-normal font-montserrat font-bold uppercase transition ease-in duration-200 bg-[#75B09C] text-white py-3.5 rounded-xl cursor-pointer hover:bg-[#]"
       />
     </form>
   );
