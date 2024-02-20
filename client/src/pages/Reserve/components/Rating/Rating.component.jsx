@@ -2,7 +2,7 @@ import { PersonFill } from "react-bootstrap-icons";
 import PropTypes from "prop-types";
 
 const RatingComponent = ({ rating }) => {
-  const formattedScore = rating.rating_score.toFixed(2);
+  const formattedScore = rating.rating_score.toFixed(1);
   return (
     <div className="w-full flex flex-col gap-5">
       <div className="w-full flex gap-5 items-center">
@@ -29,7 +29,7 @@ const RatingComponent = ({ rating }) => {
             </span>
             <span className="text-2xl font-raleway font-light">
               {formattedScore}
-              <span className="text-xl">/10.00</span>
+              <span className="text-xl">/10.0</span>
             </span>
           </div>
         </div>
