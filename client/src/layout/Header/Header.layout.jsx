@@ -16,7 +16,7 @@ const Header = () => {
     try {
       localStorage.removeItem("accessToken");
       setAuthState(false);
-      alert("Logged Out!!!");
+      window.location.reload();
     } catch (e) {
       alert(e);
     }
