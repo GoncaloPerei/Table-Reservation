@@ -1,24 +1,37 @@
-import { useEffect } from "react";
+import { useState, useContext } from "react";
 import axiosInstance from "../../../../axios";
+import { AuthContext } from "../../../../context/Auth.context";
+import { useNavigate } from "react-router-dom";
 
-function useLoginFetcher() {
-  const fetchContent = async (email, password) => {
+const useLogin = () => {
+  const { setAuthState } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const login = async (email, password) => {
+    setLoading(true);
     try {
-      const data = { email: email, password: password };
-      const loginResponse = await axiosInstance.post("api/users/login", data);
-      console.log(loginResponse.data);
+      const response = await axiosInstance.post("/api/users/login", {
+        user_email: email,
+        user_password: password,
+      });
+
+      if (response.data.error) {
+        setError(response.data.error);
+      } else {
+        localStorage.setItem("accessToken", response.data);
+        setAuthState(true);
+        alert("Logged In!");
+        navigate("/");
+      }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      setError(error.message);
     }
+    setLoading(false);
   };
 
-  useEffect(() => {
-    fetchContent();
+  return { login, loading, error };
+};
 
-    return () => {};
-  }, []);
-
-  return fetchContent;
-}
-
-export default useLoginFetcher;
+export default useLogin;
