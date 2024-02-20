@@ -20,9 +20,15 @@ const Ratings = () => {
       <Publish />
       <Line />
       <div className="w-full flex flex-col gap-10">
-        {ratings.slice(0, visible).map((rating, index) => (
-          <Rating key={index} rating={rating} />
-        ))}
+        {ratings.length > 0 ? (
+          ratings
+            .slice(0, visible)
+            .map((rating, index) => <Rating key={index} rating={rating} />)
+        ) : (
+          <span className="text-xl font-raleway font-light">
+            There&apos;s no Ratings here!
+          </span>
+        )}
       </div>
       {visible < ratings.length ? (
         <ShowAllBTN onClick={showMoreItems} />
