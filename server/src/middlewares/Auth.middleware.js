@@ -4,7 +4,9 @@ require("dotenv").config();
 const validateToken = (req, res, next) => {
   const accessToken = req.header("accessToken");
 
-  if (!accessToken) return res.json({ error: "User not logged in" });
+  if (!accessToken) {
+    return res.status(401).json({ message: "Missing token" });
+  }
 
   try {
     const validToken = verify(accessToken, process.env.SECRET);
@@ -14,7 +16,7 @@ const validateToken = (req, res, next) => {
       return next();
     }
   } catch (err) {
-    return res.json({ error: err });
+    return res.status(401).json({ message: "Invalid token" });
   }
 };
 

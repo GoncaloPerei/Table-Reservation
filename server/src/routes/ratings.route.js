@@ -5,8 +5,6 @@ const { validateToken } = require("../middlewares/Auth.middleware");
 router
   .route("/")
   .get(ratingController.Rating.getAll)
-  .post(validateToken, ratingController.Rating.create)
-  .put()
-  .delete();
+  .post(validateToken, ratingController.Rating.create);
 
 module.exports = router;
