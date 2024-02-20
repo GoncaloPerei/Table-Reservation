@@ -11,6 +11,7 @@ class Rating {
             required: false,
           },
         ],
+        order: [["rating_date", "DESC"]],
       });
 
       const ratingsWithCount = await Promise.all(
