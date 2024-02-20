@@ -4,14 +4,7 @@ require("dotenv").config();
 const { sign } = require("jsonwebtoken");
 
 class User {
-  constructor(id, firstname, lastname, email, password, administrador) {
-    this.id = id;
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.email = email;
-    this.password = password;
-    this.administrador = administrador;
-  }
+  constructor() {}
 
   static async getAllUsers(req, res) {
     try {
@@ -45,8 +38,9 @@ class User {
   }
 
   static async loginUser(req, res) {
-    const { user_email, user_password } = req.body;
     try {
+      const { user_email, user_password } = req.body;
+
       const user = await Users.findOne({
         where: { user_email: user_email },
       });

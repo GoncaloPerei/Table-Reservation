@@ -44,7 +44,7 @@ class Rating {
       rating_comment: req.body.rating_comment,
       rating_score: req.body.rating_score,
       rating_date: currentDay,
-      UserId: req.body.user_id,
+      UserId: req.user.id,
     };
     try {
       const newRating = await Ratings.create(rating);
