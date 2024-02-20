@@ -1,35 +1,14 @@
 import { PersonFill, BoxArrowRight, PersonCircle } from "react-bootstrap-icons";
-import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
+import useSetOpen from "../../hooks/useSetOpen.hook";
+
 const DropdownMenu = (props) => {
-  const [open, setOpen] = useState(false);
-
-  let menuRef = useRef();
-
-  useEffect(() => {
-    let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
-        setOpen(false);
-        console.log(menuRef.current);
-      }
-    };
-
-    document.addEventListener("mousedown", handler);
-
-    return () => {
-      document.removeEventListener("mousedown", handler);
-    };
-  });
+  const { open, toggleOpen, menuRef } = useSetOpen();
 
   return (
     <div className="menu-container" ref={menuRef}>
-      <div
-        className="menu-trigger"
-        onClick={() => {
-          setOpen(!open);
-        }}
-      >
+      <div className="menu-trigger" onClick={toggleOpen}>
         <PersonFill className="w-fit h-fit text-3xl p-4 border border-solid border-black rounded-full cursor-pointer" />
       </div>
       <div
