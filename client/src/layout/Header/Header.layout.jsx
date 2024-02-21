@@ -15,7 +15,7 @@ const Header = () => {
   const logout = () => {
     try {
       localStorage.removeItem("accessToken");
-      setAuthState(false);
+      setAuthState({ ...authState, status: false });
       window.location.reload();
     } catch (e) {
       alert(e);
@@ -38,7 +38,7 @@ const Header = () => {
             <img src={"./tr.svg"} alt="" />
           </a>
         </div>
-        {authState ? <Dropdown onClick={logout} /> : <LoginBTN />}
+        {authState.status ? <Dropdown onClick={logout} /> : <LoginBTN />}
         <div
           className={`absolute top-0 left-0 z-[100] bg-[#FBF751] flex flex-col items-center justify-between gap-8 w-[20%] h-screen font-raleway uppercase py-12 border-r border-black transition-all duration-500 ${
             open ? "left-20%" : "left-[-20%]"

@@ -3,8 +3,13 @@ import PropTypes from "prop-types";
 
 import useSetOpen from "../../hooks/useSetOpen.hook";
 
+import { useContext } from "react";
+import { AuthContext } from "../../../../context/Auth.context";
+
 const DropdownMenu = (props) => {
   const { open, toggleOpen, menuRef } = useSetOpen();
+
+  const { authState } = useContext(AuthContext);
 
   return (
     <div className="menu-container" ref={menuRef}>
@@ -16,20 +21,20 @@ const DropdownMenu = (props) => {
           open ? "active" : "inactive"
         }`}
       >
-        <span className="text-lg font-montserrat font-bold tracking-wider leading-relaxed">
-          Gonçalo Pereira
+        <span className="text-center text-lg font-montserrat font-bold tracking-wider leading-relaxed">
+          {authState.firstname} {authState.lastname}
           <br />
           <span className="text-normal font-raleway font-light">Customer</span>
         </span>
         <ul>
-          <a href="">
+          <a href="/profile">
             <li className="flex gap-5 items-center font-raleway font-light">
-              <PersonCircle /> My Profile
+              <PersonCircle className="text-xl" /> My Profile
             </li>
           </a>
           <button onClick={props.onClick} className="w-full">
             <li className="flex gap-5 items-center font-raleway font-light">
-              <BoxArrowRight /> Logout
+              <BoxArrowRight className="text-xl" /> Logout
             </li>
           </button>
         </ul>

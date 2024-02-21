@@ -21,8 +21,12 @@ const useLogin = () => {
         setError(response.data.error);
       } else {
         localStorage.setItem("accessToken", response.data);
-        setAuthState(true);
-        alert("Logged In!");
+        setAuthState({
+          firstname: response.data.user_first_name,
+          lastname: response.data.user_last_name,
+          id: response.data.id,
+          status: true,
+        });
         navigate("/");
       }
     } catch (error) {

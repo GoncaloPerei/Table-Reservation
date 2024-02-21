@@ -58,7 +58,13 @@ class User {
       }
 
       const accessToken = await sign(
-        { user_email: user.user_email, id: user.id },
+        {
+          user_first_name: user.user_first_name,
+          user_last_name: user.user_last_name,
+          user_email: user.user_email,
+          user_phone_number: user.user_phone_number,
+          id: user.id,
+        },
         process.env.SECRET
       );
 
