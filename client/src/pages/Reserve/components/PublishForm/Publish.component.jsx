@@ -1,38 +1,33 @@
-import { useState } from "react";
-import axiosInstance from "../../../../axios";
+import { useState, useContext } from "react";
+import useRatingFetcher from "../../hooks/useRatingFetcher.hook";
+
+import { AuthContext } from "../../../../context/Auth.context";
+
+const emptyFields = (setScore, setComment) => {
+  setScore("");
+  setComment("");
+};
 
 const Publish = () => {
   const [score, setScore] = useState("");
   const [comment, setComment] = useState("");
 
-  const onSubmit = (e) => {
+  const { authState } = useContext(AuthContext);
+
+  const { postContent } = useRatingFetcher();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axiosInstance
-      .post(
-        "/api/ratings",
-        {
-          rating_score: score,
-          rating_comment: comment,
-        },
-        {
-          headers: {
-            Authorization: localStorage.getItem("accessToken"),
-          },
-        }
-      )
-      .then((response) => {
-        if (response.data.error) {
-          alert(response.data.error);
-        } else {
-          alert("Rating Created!!!");
-        }
-      });
+    const response = await postContent(score.trim(), comment.trim());
+    if (!response.error) {
+      emptyFields(setScore, setComment);
+    }
   };
 
   return (
     <form
       className="w-full flex flex-col px-8 gap-6 items-end"
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     >
       <div className="relative w-full flex gap-6">
         <input
@@ -42,6 +37,7 @@ const Publish = () => {
           onChange={(event) => {
             setScore(event.target.value);
           }}
+          disabled={!authState.status}
         />
         <input
           type="text"
@@ -50,12 +46,14 @@ const Publish = () => {
           onChange={(event) => {
             setComment(event.target.value);
           }}
+          disabled={!authState.status}
         />
       </div>
       <input
         type="submit"
         value="publish"
         className="w-fit px-6 py-5 border border-solid border-[#998650] text-[#998650] rounded-xl uppercase font-raleway font-light cursor-pointer transition ease-in duration-200 hover:bg-[#998650] hover:text-white"
+        disabled={!authState.status}
       />
     </form>
   );

@@ -39,12 +39,10 @@ class Rating {
   }
 
   static async create(req, res) {
-    const currentDay = new Date().toISOString().slice(0, 10);
-
     const rating = {
       rating_comment: req.body.rating_comment,
       rating_score: req.body.rating_score,
-      rating_date: currentDay,
+      rating_date: req.body.rating_date,
       UserId: req.user.id,
     };
     try {
