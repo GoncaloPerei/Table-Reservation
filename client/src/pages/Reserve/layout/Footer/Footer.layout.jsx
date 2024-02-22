@@ -1,6 +1,10 @@
 import { Label, Submit, Line } from "../../../../components";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import { AuthContext } from "../../../../context/Auth.context";
+
+import useReservationFetcher from "../../hooks/useReservationFetcher.hook";
 
 const Footer = () => {
   return (
@@ -27,21 +31,67 @@ const Footer = () => {
 const ReserveForm = () => {
   const [date, setDate] = useState("");
   const [message, setMessage] = useState("");
+  const [number, setNumber] = useState("");
+
+  const { authState } = useContext(AuthContext);
+
+  const { postContent, loading } = useReservationFetcher();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    postContent(date.trim(), number.trim(), message.trim());
+    clearFields();
+
+    if (!loading) {
+      console.log("asap");
+    }
+  };
+
+  const clearFields = () => {
+    setDate("");
+    setMessage("");
+    setNumber("");
   };
 
   return (
     <>
       <form action="" className="flex flex-col gap-12" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-6">
-          <Label input="Email" type="email" value="" />
-          <Label input="Name" type="text" value="" />
-          <Label input="Date" type="date" onChange={setDate} />
-          <Label input="Message" type="text" onChange={setMessage} />
+          <Label
+            input="Email"
+            type="email"
+            value={authState.email}
+            disable={true}
+          />
+          <Label
+            input="Name"
+            type="text"
+            value={`${authState.firstname} ${authState.lastname}`}
+            disable={true}
+          />
+          <Label
+            input="Date"
+            type="date"
+            onChange={setDate}
+            value={date}
+            disable={!authState.status}
+          />
+          <Label
+            input="Persons"
+            type="number"
+            onChange={setNumber}
+            value={number}
+            disable={!authState.status}
+          />
+          <Label
+            input="Message"
+            type="text"
+            onChange={setMessage}
+            value={message}
+            disable={!authState.status}
+          />
         </div>
-        <Submit value="Reserve" />
+        <Submit value="Reserve" disable={!authState.status} />
       </form>
     </>
   );

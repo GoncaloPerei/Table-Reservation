@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const LabelForm = ({ input, type, onChange }) => {
+const LabelForm = ({ input, type, onChange, disable, value }) => {
   return (
     <>
       <label
@@ -15,7 +15,9 @@ const LabelForm = ({ input, type, onChange }) => {
           onChange={(e) => {
             onChange(e.target.value);
           }}
-          className="block mt-1.5 font-raleway font-light text-normal border-b border-solid border-black/20 w-full outline-none py-4 tracking-wider leading-relaxed"
+          value={value}
+          disabled={disable}
+          className="block px-2.5 rounded-t-xl mt-1.5 font-raleway font-light text-normal border-b border-solid border-black/20 w-full outline-none py-4 tracking-wider leading-relaxed"
         />
       </label>
     </>
@@ -25,7 +27,9 @@ const LabelForm = ({ input, type, onChange }) => {
 LabelForm.propTypes = {
   input: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
+  disable: PropTypes.bool.isRequired,
+  value: PropTypes.string,
 };
 
 export default LabelForm;

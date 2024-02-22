@@ -3,11 +3,15 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   const Reservations = sequelize.define("Reservations", {
     reservation_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     reservation_nPersons: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    reservation_message: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
   });
