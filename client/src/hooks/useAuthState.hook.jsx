@@ -10,28 +10,41 @@ function useAuthState() {
     id: 0,
     status: false,
   });
-  useEffect(() => {
-    axiosInstance
-      .get("/api/users/auth", {
+  const fetchData = async () => {
+    try {
+      const accessToken = localStorage.getItem("accessToken");
+
+      if (!accessToken) {
+        return setAuthState((prevState) => ({ ...prevState, status: false }));
+      }
+
+      const response = await axiosInstance.get("/api/users/auth", {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          Authorization: `Bearer ${accessToken}`,
         },
-      })
-      .then((response) => {
-        if (response.data.error) {
-          setAuthState({ ...authState, status: false });
-        } else {
-          setAuthState({
-            firstname: response.data.user_first_name,
-            lastname: response.data.user_last_name,
-            email: response.data.user_email,
-            phonenumber: response.data.user_phone_number,
-            id: response.data.id,
-            status: true,
-          });
-        }
       });
-  }, [authState]);
+
+      if (response.data.error) {
+        setAuthState((prevState) => ({ ...prevState, status: false }));
+      } else {
+        const userData = response.data;
+        setAuthState({
+          firstname: userData.user_first_name,
+          lastname: userData.user_last_name,
+          email: userData.user_email,
+          phonenumber: userData.user_phone_number,
+          id: userData.id,
+          status: true,
+        });
+      }
+    } catch (error) {
+      console.error("An error ocurred when obtaining auth data: ", error);
+      setAuthState((prevState) => ({ ...prevState, status: false }));
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return { authState, setAuthState };
 }
