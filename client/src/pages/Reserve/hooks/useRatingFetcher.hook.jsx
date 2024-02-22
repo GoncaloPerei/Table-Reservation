@@ -63,12 +63,11 @@ function useRatingFetcher() {
         };
         setRatings([...ratings, ratingToAdd]);
       }
-      setLoading(false);
     } catch (error) {
       alert("An error ocurred.");
       console.log("An error ocurred: ", error);
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   useEffect(() => {

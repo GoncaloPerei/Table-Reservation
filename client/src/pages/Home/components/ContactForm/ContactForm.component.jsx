@@ -114,8 +114,8 @@ class ContactForm extends React.Component {
           </div>
           <input
             className="w-fit px-10 py-5 bg-transparent flex items-center gap-5 uppercase font-montserrat font-bold text-[#998650] border border-solid border-[#998650] rounded-xl text-lg cursor-pointer transition ease-in duration-200 hover:bg-[#998650] hover:text-white"
-            type="send"
-            value="Submit"
+            type="submit"
+            value="send"
           />
         </form>
       </div>
