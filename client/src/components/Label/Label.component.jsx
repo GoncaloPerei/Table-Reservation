@@ -5,9 +5,9 @@ const LabelForm = ({ input, type, onChange }) => {
     <>
       <label
         htmlFor={input}
-        className="block font-raleway font-light text-lg w-full"
+        className="block font-raleway font-bold text-lg w-full tracking-wider leading-relaxed"
       >
-        {input}
+        {input} <span className="text-red-500">*</span>
         <input
           type={type}
           name={input}
@@ -15,7 +15,7 @@ const LabelForm = ({ input, type, onChange }) => {
           onChange={(e) => {
             onChange(e.target.value);
           }}
-          className="block mt-1.5 text-normal border-b border-solid border-black/20 w-full outline-none py-4"
+          className="block mt-1.5 font-raleway font-light text-normal border-b border-solid border-black/20 w-full outline-none py-4 tracking-wider leading-relaxed"
         />
       </label>
     </>
