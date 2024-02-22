@@ -35,16 +35,12 @@ const ReserveForm = () => {
 
   const { authState } = useContext(AuthContext);
 
-  const { postContent, loading } = useReservationFetcher();
+  const { postContent } = useReservationFetcher();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    postContent(date.trim(), number.trim(), message.trim());
+    await postContent(date.trim(), number.trim(), message.trim());
     clearFields();
-
-    if (!loading) {
-      console.log("asap");
-    }
   };
 
   const clearFields = () => {

@@ -66,8 +66,10 @@ function useRatingFetcher() {
     } catch (error) {
       alert("An error ocurred.");
       console.log("An error ocurred: ", error);
+    } finally {
+      setLoading(false);
+      fetchContent();
     }
-    setLoading(false);
   };
 
   useEffect(() => {

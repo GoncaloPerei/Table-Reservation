@@ -48,10 +48,13 @@ const Publish = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await postContent(score.trim(), comment.trim());
-    if (!response.error) {
-      emptyFields(setScore, setComment);
-    }
+    await postContent(score.trim(), comment.trim());
+    clearFields();
+  };
+
+  const clearFields = () => {
+    setScore("");
+    setComment("");
   };
 
   return (
@@ -64,6 +67,7 @@ const Publish = () => {
           type="number"
           className="h-20 border border-solid border-[#808080] placeholder-[#808080] font-raleway font-light  rounded-xl px-6"
           placeholder="Score"
+          value={score}
           onChange={(event) => {
             setScore(event.target.value);
           }}
@@ -73,6 +77,7 @@ const Publish = () => {
           type="text"
           className="w-full h-20 border border-solid border-[#808080] placeholder-[#808080]  font-raleway font-light rounded-xl px-6"
           placeholder="Share your thoughts about this restaurant...."
+          value={comment}
           onChange={(event) => {
             setComment(event.target.value);
           }}
@@ -87,11 +92,6 @@ const Publish = () => {
       />
     </form>
   );
-};
-
-const emptyFields = (setScore, setComment) => {
-  setScore("");
-  setComment("");
 };
 
 export default Ratings;

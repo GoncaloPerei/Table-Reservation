@@ -13,7 +13,7 @@ const InfoLinks = () => {
             target="blank"
             className="text-lg font-raleway leading-loose tracking-wider"
           >
-            Rua Pedro Álvares Cabral 31, 4435-123 Rio Tinto
+            31 Pedro Álvares Cabral Street, 4435-123 Rio Tinto
           </a>
         </div>
         <div className="w-max flex gap-2.5 items-center">
