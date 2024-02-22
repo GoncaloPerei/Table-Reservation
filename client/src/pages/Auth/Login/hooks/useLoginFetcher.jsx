@@ -3,23 +3,38 @@ import axiosInstance from "../../../../axios";
 import { AuthContext } from "../../../../context/Auth.context";
 import { useNavigate } from "react-router-dom";
 
+const checkFields = (email, password) => {
+  if (!email && !password) {
+    alert("Fields are empty.");
+    throw new Error("Fields are empty.");
+  }
+  if (!email) {
+    alert("Email field is empty.");
+    throw new Error("Email field is empty.");
+  }
+  if (!password) {
+    alert("Password field is empty.");
+    throw new Error("Password field is empty.");
+  }
+};
+
 const useLogin = () => {
   const { setAuthState } = useContext(AuthContext);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  const login = async (email, password) => {
-    setLoading(true);
+  const postContent = async (email, password) => {
+    checkFields(email, password);
     try {
       const response = await axiosInstance.post("/api/users/login", {
         user_email: email,
         user_password: password,
       });
-
       if (response.data.error) {
-        setError(response.data.error);
+        alert(response.data.error);
+        throw new Error(response.data.error);
       } else {
+        alert("Logged In!");
         localStorage.setItem("accessToken", response.data);
         setAuthState({
           firstname: response.data.user_first_name,
@@ -30,12 +45,13 @@ const useLogin = () => {
         navigate("/");
       }
     } catch (error) {
-      setError(error.message);
+      alert("An error ocurred.");
+      console.log("An error ocurred: ", error);
     }
     setLoading(false);
   };
 
-  return { login, loading, error };
+  return { postContent, loading };
 };
 
 export default useLogin;

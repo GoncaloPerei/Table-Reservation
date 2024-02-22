@@ -3,13 +3,13 @@ import useLoginFetcher from "../../hooks/useLoginFetcher";
 import { useState } from "react";
 
 function LoginForm() {
-  const { login } = useLoginFetcher();
+  const { postContent } = useLoginFetcher();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    login(email, password);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    postContent(email.trim(), password.trim());
   };
 
   return (
