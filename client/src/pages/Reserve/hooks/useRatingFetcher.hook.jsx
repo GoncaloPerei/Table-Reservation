@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axiosInstance from "../../../axios";
 
 const checkFields = (score, comment) => {
@@ -22,18 +22,15 @@ const checkFields = (score, comment) => {
 
 function useRatingFetcher() {
   const [ratings, setRatings] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  const fetchContent = async () => {
+  const fetchContent = useCallback(async () => {
     try {
       const response = await axiosInstance.get("/api/ratings");
       setRatings(response.data);
-      setLoading(false);
     } catch (error) {
       console.error("An error ocurred: ", error);
-      setLoading(false);
     }
-  };
+  }, [setRatings]);
 
   const postContent = async (score, comment) => {
     checkFields(score, comment);
@@ -56,19 +53,11 @@ function useRatingFetcher() {
         throw new Error(response.data.error);
       } else {
         alert("Rating created!");
-        const ratingToAdd = {
-          rating_comment: comment,
-          rating_score: score,
-          rating_date: date,
-        };
-        setRatings([...ratings, ratingToAdd]);
+        window.location.reload();
       }
     } catch (error) {
       alert("An error ocurred.");
       console.log("An error ocurred: ", error);
-    } finally {
-      setLoading(false);
-      fetchContent();
     }
   };
 
@@ -78,7 +67,7 @@ function useRatingFetcher() {
     return () => {};
   }, []);
 
-  return { ratings, postContent, loading };
+  return { ratings, postContent };
 }
 
 export default useRatingFetcher;

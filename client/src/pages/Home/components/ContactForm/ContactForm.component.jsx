@@ -44,6 +44,7 @@ class ContactForm extends React.Component {
           .then(
             (response) => {
               console.log("sent ", response.status, response.text);
+              alert("Email sent.");
             },
             (error) => {
               console.log("error ", error);
@@ -62,7 +63,7 @@ class ContactForm extends React.Component {
         <span className="text-7xl font-montserrat font-bold uppercase text-center">
           get in <span className="text-[#75B09C]">touch</span>
           <br />
-          <span className="text-4xl font-raleway font-thin">
+          <span className="text-4xl font-raleway font-light">
             ask us anything...
           </span>
         </span>
@@ -80,7 +81,7 @@ class ContactForm extends React.Component {
                   name="nameValue"
                   type="text"
                   placeholder="Your name"
-                  className="font-raleway text-lg rounded-xl min-h-16 px-5 bg-[#EAEAEA] placeholder-[#A8A8A8]"
+                  className="font-raleway text-lg rounded-xl min-h-16 px-5 bg-[#EAEAEA] placeholder-[#000000]"
                   onChange={this.handleChange}
                   value={this.state.nameValue}
                 />
@@ -93,7 +94,7 @@ class ContactForm extends React.Component {
                   name="emailValue"
                   type="email"
                   placeholder="youremail@email.com"
-                  className="font-raleway text-lg rounded-xl min-h-16 px-5 bg-[#EAEAEA] placeholder-[#A8A8A8]"
+                  className="font-raleway text-lg rounded-xl min-h-16 px-5 bg-[#EAEAEA] placeholder-[#000000]"
                   onChange={this.handleChange}
                   value={this.state.emailValue}
                 />
@@ -106,7 +107,7 @@ class ContactForm extends React.Component {
               <textarea
                 name="messageValue"
                 placeholder="My table wasn't reserved"
-                className="w-full font-raleway text-lg rounded-xl min-h-60 px-5 py-5 bg-[#EAEAEA] placeholder-[#A8A8A8] resize-none"
+                className="w-full font-raleway text-lg rounded-xl min-h-60 px-5 py-5 bg-[#EAEAEA] placeholder-[#000000] resize-none"
                 onChange={this.handleChange}
                 value={this.state.messageValue}
               ></textarea>

@@ -15,7 +15,7 @@ const Submit = ({ value, disable }) => {
 
 Submit.propTypes = {
   value: PropTypes.string.isRequired,
-  disable: PropTypes.bool.isRequired,
+  disable: PropTypes.bool,
 };
 
 export default Submit;

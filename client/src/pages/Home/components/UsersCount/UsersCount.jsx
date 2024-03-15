@@ -8,14 +8,14 @@ const UsersCount = () => {
         <span className="font-montserrat font-bold">
           {usersCount}
           <br />
-          <span className="font-raleway font-thin text-5xl">
+          <span className="font-raleway font-light text-5xl">
             registered customers
           </span>
         </span>
         <span className="font-montserrat font-bold">
           {reservationsCount}
           <br />
-          <span className="font-raleway font-thin text-5xl">
+          <span className="font-raleway font-light text-5xl">
             reservations done
           </span>
         </span>

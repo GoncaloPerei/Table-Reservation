@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axiosInstance from "../axios";
 
 function useAuthState() {
@@ -10,12 +10,16 @@ function useAuthState() {
     id: 0,
     status: false,
   });
-  const fetchData = async () => {
+
+  const fetchData = useCallback(async () => {
     try {
       const accessToken = localStorage.getItem("accessToken");
 
       if (!accessToken) {
-        return setAuthState((prevState) => ({ ...prevState, status: false }));
+        return setAuthState((prevState) => ({
+          ...prevState,
+          status: false,
+        }));
       }
 
       const response = await axiosInstance.get("/api/users/auth", {
@@ -25,7 +29,10 @@ function useAuthState() {
       });
 
       if (response.data.error) {
-        setAuthState((prevState) => ({ ...prevState, status: false }));
+        setAuthState((prevState) => ({
+          ...prevState,
+          status: false,
+        }));
       } else {
         const userData = response.data;
         setAuthState({
@@ -39,12 +46,16 @@ function useAuthState() {
       }
     } catch (error) {
       console.error("An error ocurred when obtaining auth data: ", error);
-      setAuthState((prevState) => ({ ...prevState, status: false }));
+      setAuthState((prevState) => ({
+        ...prevState,
+        status: false,
+      }));
     }
-  };
+  }, []);
+
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return { authState, setAuthState };
 }

@@ -11,7 +11,7 @@ const validateToken = async (req, res, next) => {
   const token = bearerToken.split(" ")[1];
 
   try {
-    const validToken = await verify(token, process.env.SECRET);
+    const validToken = verify(token, process.env.SECRET);
     req.user = validToken;
 
     if (validToken) {

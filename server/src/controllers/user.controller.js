@@ -6,7 +6,7 @@ const { sign } = require("jsonwebtoken");
 class User {
   constructor() {}
 
-  static async getAllUsers(req, res) {
+  static async getAll(req, res) {
     try {
       await Users.findAll().then((response) => res.status(200).json(response));
     } catch (err) {
@@ -17,7 +17,7 @@ class User {
     }
   }
 
-  static async createUser(req, res) {
+  static async create(req, res) {
     const hashedPassword = await bcrypt.hash(req.body.user_password, 10);
     const user = {
       user_email: req.body.user_email,
@@ -37,7 +37,7 @@ class User {
     }
   }
 
-  static async loginUser(req, res) {
+  static async login(req, res) {
     try {
       const { user_email, user_password } = req.body;
 

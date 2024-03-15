@@ -1,4 +1,4 @@
-import { Label, Submit } from "../../../components";
+import { Label, Submit } from "../../../../../components";
 import { useState } from "react";
 import useRegisterFetcher from "../../hooks/useRegisterFetcher.hook";
 
@@ -36,8 +36,18 @@ const Register = () => {
     <>
       <form className="h-full flex flex-col gap-12" onSubmit={handleSubmit}>
         <div className="w-full flex flex-col gap-6">
-          <Label input="First Name" type="text" onChange={setFirstName} />
-          <Label input="Last Name" type="text" onChange={setLastName} />
+          <Label
+            input="First Name"
+            type="text"
+            pattern={"[a-zA-Z]*"}
+            onChange={setFirstName}
+          />
+          <Label
+            input="Last Name"
+            type="text"
+            pattern={"[a-zA-Z]*"}
+            onChange={setLastName}
+          />
           <Label input="Phone Number" type="number" onChange={setPhoneNumber} />
           <Label input="Email" type="email" onChange={setEmail} />
           <Label input="Password" type="password" onChange={setPassword} />

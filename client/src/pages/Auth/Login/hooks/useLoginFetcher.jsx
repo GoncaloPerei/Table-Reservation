@@ -30,22 +30,18 @@ const useLogin = () => {
         user_email: email,
         user_password: password,
       });
-      if (response.data.error) {
-        alert(response.data.error);
-        throw new Error(response.data.error);
-      } else {
-        alert("Logged In!");
-        localStorage.setItem("accessToken", response.data);
-        setAuthState({
-          firstname: response.data.user_first_name,
-          lastname: response.data.user_last_name,
-          id: response.data.id,
-          status: true,
-        });
-        navigate("/");
-      }
+      console.log(response);
+      localStorage.setItem("accessToken", response.data);
+      setAuthState({
+        firstname: response.data.user_first_name,
+        lastname: response.data.user_last_name,
+        id: response.data.id,
+        status: true,
+      });
+      alert("Logged In!");
+      navigate("/");
     } catch (error) {
-      alert("An error ocurred.");
+      alert(error.response.data.error);
       console.log("An error ocurred: ", error);
     }
     setLoading(false);
