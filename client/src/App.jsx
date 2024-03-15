@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "primereact/resources/themes/lara-light-cyan/theme.css";
 const HomePage = React.lazy(() => import("./pages/Home/Home"));
 const ReservePage = React.lazy(() => import("./pages/Reserve/Reserve"));
 const AboutPage = React.lazy(() => import("./pages/About/About"));

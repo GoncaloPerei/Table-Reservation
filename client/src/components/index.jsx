@@ -4,3 +4,4 @@ export { default as Loading } from "./Loading/Loading.component";
 export { default as Line } from "./Line/Line.component";
 export { default as Label } from "./Label/Label.component";
 export { default as Submit } from "./Submit/Submit.component";
+export { default as Alerts } from "./Alerts/Alerts.component";
