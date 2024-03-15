@@ -23,17 +23,11 @@ const useLogin = () => {
         user_password: password,
       };
       await axiosInstance.post("/api/users/register", userData);
-      alert("User registered");
       navigate("/login");
     } catch (error) {
-      handleRegistrationError(error);
-    } finally {
-      setLoading(false);
+      alert(error.response.data.error);
     }
-  };
-
-  const handleRegistrationError = (error) => {
-    alert(error.response.data.message);
+    setLoading(false);
   };
 
   return { register, loading };

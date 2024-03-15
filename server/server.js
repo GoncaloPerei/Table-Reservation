@@ -16,5 +16,5 @@ app.use("/api/meals", require("./src/routes/meals.route"));
 app.use("/api/ratings", require("./src/routes/ratings.route"));
 
 db.sequelize.sync().then(() => {
-  app.listen(3002, () => console.log("server started on port 3002"));
+  app.listen(8000, () => console.log("Server host on port 8000"));
 });

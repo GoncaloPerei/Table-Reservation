@@ -44,8 +44,9 @@ class User {
       const user = await Users.findOne({
         where: { user_email: user_email },
       });
+
       if (!user) {
-        return res.status(400).json({ error: "User not found" });
+        return res.status(401).json({ error: "User not found" });
       }
 
       const isPasswordValid = await bcrypt.compare(
@@ -54,7 +55,7 @@ class User {
       );
 
       if (!isPasswordValid) {
-        return res.status(400).json({ error: "Invalid email or password" });
+        return res.status(401).json({ error: "Invalid email or password" });
       }
 
       const accessToken = await sign(
